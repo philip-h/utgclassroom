@@ -4,4 +4,4 @@ name: class2
 date: 2019-09-13 16:27:26
 ---
 
-### Class 2
+No content yet!

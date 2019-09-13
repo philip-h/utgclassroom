@@ -18,14 +18,16 @@
 
       <ul class="mdl-list mdl-navigation">
         <span class="mdl-list__title">Classes</span>
-        <% site.pages.each(function(page) { %> 
+        <% site.pages.sort('name').each(function(page) { %> 
           <% if (page.title.indexOf('PY') !== -1){ %>
-            <li class="mdl-list__item mdl-navigation__link <% if (is_current(page.name)) { %>active-class<% } %>">
-              <a href="<%- url_for(page.name)%>" class="mdl-list__item-primary-content ">
-                <i class="material-icons mdl-list__item-icon">code</i>
-                <%- page.title %>
-              </a>
-            </li>
+            <a href="<%- url_for(page.name)%>">
+              <li class="mdl-list__item mdl-navigation__link <% if (is_current(page.name)) { %>active-class<% } %>">
+                <span class="mdl-list__item-primary-content ">
+                  <i class="material-icons mdl-list__item-icon">code</i>
+                  <%- page.title %>
+                </span>
+              </li>
+            </a>
           <% } %>
         <% }) %>
       </ul>
