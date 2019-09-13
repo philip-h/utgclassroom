@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <title><% if (page.title){ %><%- page.title %> <% } else { %><%= config.title %> <% } %></title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
   <%- css(['css/mdl/material.css', 'css/prism/prism.css', 'css/style.css']) %>
 </head>
 
@@ -23,7 +25,7 @@
             <a href="<%- url_for(page.name)%>">
               <li class="mdl-list__item mdl-navigation__link <% if (is_current(page.name)) { %>active-class<% } %>">
                 <span class="mdl-list__item-primary-content ">
-                  <i class="material-icons mdl-list__item-icon">code</i>
+                  <i class="mdl-list__item-icon <%- page.icon %>"></i>
                   <%- page.title %>
                 </span>
               </li>
@@ -35,26 +37,28 @@
       <hr>
 
       <ul class="mdl-list mdl-navigation">
-        <li class="mdl-list__item mdl-navigation__link">
-          <a href="<%- url_for('links') %>" class="mdl-list__item-primary-content">
-            <i class="material-icons mdl-list__item-icon">link</i>
-            Links
-          </a>
-        </li>
+        <a href="<%- url_for('links') %>">
+          <li class="mdl-list__item mdl-navigation__link">
+            <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">link</i>
+              Links
+            </span>
+          </li>
+        </a>
       </ul>
 
       <hr>
 
       <ul class="mdl-list mdl-navigation">
-        <li class="mdl-list__item mdl-navigation__link">
-          <a href="<%- url_for('questions') %>" class="mdl-list__item-primary-content">
-            <i class="material-icons mdl-list__item-icon">info</i>
-            Questions
-          </a>
+        <a href="<%- url_for('questions') %>">
+          <li class="mdl-list__item mdl-navigation__link">
+            <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">info</i>
+              Questions
+            </span>
         </li>
+        </a>
       </ul>
-
-
     </nav>
   </div>
 
