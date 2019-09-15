@@ -1,7 +1,7 @@
 ---
-title: PY201 11:00
+title: UN401 11:00
 name: class3
-icon: fas fa-gamepad
+icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
