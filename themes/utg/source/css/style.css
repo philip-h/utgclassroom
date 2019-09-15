@@ -26,12 +26,8 @@ p {
 }
 
 /* Nav Drawer Modifications */
-.active-class {
+.active {
   background: #E0E0E0;
-}
-
-.active-time {
-  font-weight: bold;
 }
 
 .mdl-list__title {
