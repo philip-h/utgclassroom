@@ -15,14 +15,14 @@
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
   <div class="mdl-layout__drawer">
-    <a href="/" class="mdl-layout-title">UTG Blog</a>
+    <a href="/" class="nav-link mdl-layout-title">UTG Blog</a>
     <nav class="mdl-navigation">
 
       <ul class="mdl-list mdl-navigation">
         <span class="mdl-list__title">Classes</span>
         <% site.pages.sort('name').each(function(page) { %> 
           <% if (page.name){ %>
-            <a href="<%- url_for(page.name)%>" class="<% if (is_current(page.name)) { %>active<% } %>">
+            <a href="<%- url_for(page.name)%>" class="nav-link <% if (is_current(page.name)) { %>active<% } %>">
               <li class="mdl-list__item mdl-navigation__link">
                 <span class="mdl-list__item-primary-content ">
                   <i class="mdl-list__item-icon <%- page.icon %>"></i>
@@ -37,7 +37,7 @@
       <hr>
 
       <ul class="mdl-list mdl-navigation">
-        <a href="<%- url_for('links') %>" class="<% if (is_current('links')) { %>active<% } %>">
+        <a href="<%- url_for('links') %>" class="nav-link <% if (is_current('links')) { %>active<% } %>">
           <li class="mdl-list__item mdl-navigation__link">
             <span class="mdl-list__item-primary-content">
               <i class="material-icons mdl-list__item-icon">link</i>
@@ -50,7 +50,7 @@
       <hr>
 
       <ul class="mdl-list mdl-navigation">
-        <a href="<%- url_for('questions') %>" class="<% if (is_current('questions')) { %>active<% } %>">
+        <a href="<%- url_for('questions') %>" class="nav-link <% if (is_current('questions')) { %>active<% } %>">
           <li class="mdl-list__item mdl-navigation__link">
             <span class="mdl-list__item-primary-content">
               <i class="material-icons mdl-list__item-icon">info</i>

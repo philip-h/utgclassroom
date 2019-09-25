@@ -5,6 +5,13 @@ html, body {
 
 a {
   color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.nav-link {
   text-decoration: none;
 }
 
