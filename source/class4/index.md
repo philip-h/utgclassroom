@@ -5,6 +5,18 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## September 28, 2019
+
+Hello Jr. Coders!
+
+Today, we worked on some more Blockly! You guys are doing so great, and I am truly inspired by your dedication, enthusiasm, and problem solving abilities.
+
+The last 15 minutes of class were spent on [Type Racer](https://play.typeracer.com/) so we could practice our typing!
+
+Next week we will go over everything we've learned in class, and look at some of our first code!
+
+See you guys then!
+
 ## September 21, 2019
 
 Hello Jr. Coders!

@@ -5,6 +5,68 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## September 28, 2019
+
+Hey guys! This week, we began coding! Basically all we did in class was set up the first movement direction, and I'll leave it to you guys, as an excersise that we will take up at the beginning of next class, to solve!
+
+The first thing we did was create a folder in our **Assets** folder called **Scripts**, and in that folder we created a script called **PlayerController.cs**. This is what the code looks like, without any modifications!
+
+{% code PlayerController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+}
+{% endcode %}
+
+Then, we added this bit of code to the **Update()** method, and the bit of code just below the class declaration.
+
+{% code PlayerController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+
+    public float speed = 5f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+    }
+}
+{% endcode %}
+
+So, let's talk about what that new piece of code means!
+
+Basically, we are saying to Unity "Hey Unity, **if**, however you get **Input**, someone happens to press the **Right Arrow** button on the keyboard, **Translate** the current **Game Object's** position to the right by a factor of **speed**"
+
+Now your job is to do the same with the other 3 directions! If you have any questions, ask away!
+
+See you guys next week!
+
 ## September 21, 2019
 
 Hello game devs! This week in class (while we weren't waiting for Unity to load / download) we got to play around a bit with the interface of Unity!

@@ -4,6 +4,35 @@ name: class2
 icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
+## September 28, 2019
+
+Hey guys! This week we made the spaceship move when we pressed on the arrow keys! Finally we have some working mechanics to this game!
+
+The first thing we did was look at the documentation for a way to make something move when we press down a key on the keyboard. The **key_is_pressed()** seemed promising, and we even saw there was an example in the documentation of how to use it!
+
+So in the **obj_player's loop** code, we placed the following
+
+{% code obj_player/loop %}
+if key_is_pressed('right'):
+  self.x = self.x + 3
+  
+elif key_is_pressed('up'):
+  self.y = self.y + 3
+
+elif key_is_pressed('left'):
+  self.x = self.x - 3
+  
+elif key_is_pressed('down'):
+  self.y = self.y - 3
+{% endcode %}
+
+So **if** a **key is pressed** that we specify, then move the player in a certain direction. We specify that direction with statements like **self.x = self.x + 3** signifying movement to the right.
+
+If you have any questions, feel free to ask!
+
+Next week we will either do missals or asteroids, up to you!
+
+See you then!
 
 ## September 21, 2019
 
