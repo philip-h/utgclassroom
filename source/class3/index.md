@@ -5,9 +5,50 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## October 5, 2019
+
+So this week, we talked about Prefabs and created a laser prefab that allowed us to **spawn** lasers from our Playership when we press the space key.
+
+First thing's first, a Prefab is a **Pre Fabricated** GameObject that comes with properties and scripts that we decide we want to package together.
+
+To create a Prefab, modify a GameObject to your liking, and then drag that GameObject from the left hierarchy pane to the Prefabs folder. BOOM, it should turn blue, and you've created a Prefab!
+
+So in class, we created a GreenLaser GameObject, then created a **script** called **LaserController.cs**. Inside that script, we put one line of code that tells Unity to make that laser move up... always!
+
+{% code LaserController.cs %}
+void Update()
+{
+  // Move the laser up!
+  transform.Translate(Vector2.up * speed * Time.deltaTime);
+}
+{% endcode %}
+
+Now, we need to tell Unity to **Instantiate** (create) lasers whenever we press the space key! This is what that code looks like:
+
+{% code PlayerController.cs %}
+public GameObject laser;
+
+...
+
+void Update()
+{
+  ...
+  if (Input.GetKeyDown(KeyCode.Space))
+  {
+    Instantiate(laser, transform.position, Quaternion.identity);
+  }
+}
+{% endcode %}
+
+So the first thing we have to do is tell the PlayerController script what a laser is! We do that by creating a **public** variable that we can later drag a Laser object onto through unity. Then we tell unity "Hey, whenever you get some input, and that input happens to be that the user pressed the spacbar, **instantiate** (create) a new **laser** where the current position of my Playership is!
+
+And that's it!
+
+Have a good week off, and I'll see you guys in 2 weeks.
+
 ## September 28, 2019
 
-Hey guys! This week, we began coding! Basically all we did in class was set up the first movement direction, and I'll leave it to you guys, as an excersise that we will take up at the beginning of next class, to solve!
+Hey guys! This week, we began coding! Basically all we did in class was set up the first movement direction, and I'll leave it to you guys, as an exercise that we will take up at the beginning of next class, to solve!
 
 The first thing we did was create a folder in our **Assets** folder called **Scripts**, and in that folder we created a script called **PlayerController.cs**. This is what the code looks like, without any modifications!
 

@@ -5,6 +5,16 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## October 5, 2019
+
+Hey Jr. Coders!
+
+This week in class, most of us finised up our Blockly adventures, and played some awesome typing games! Walking around the class, I can already see a huge improvement in your typing skills, all of you!
+
+In 2 weeks we will begin to take a look at some code, and learn more about how your computer works!
+
+See you then!
+
 ## September 28, 2019
 
 Hello Jr. Coders!

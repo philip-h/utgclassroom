@@ -4,6 +4,15 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+## October 5, 2019
+
+Hey guys! So today was a catch up day for the guys who missed class last week, and to ask any and all of your questions!
+
+By the beginning of next week, you guys should all be done lesson 4 (The slice trail one). If you have any questions, ask away!
+
+Next week in class, we will be going over commenting, what it is, what it's used for, and how do create them.
+
+See you guys in 2 weeks!
 
 ## September 28, 2019
 

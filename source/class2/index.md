@@ -4,6 +4,43 @@ name: class2
 icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
+
+## October 5, 2019
+
+Hello coders! This week in class, gave our spaceship the ability to shoot missiles!
+
+First off, we need to create a projectile and put it on the screen! Make sure that **obj_projectile** knows what sprite to render:
+
+{% code obj_projectile/start %}
+sprite = sprite_new('spr_projectile')
+{% endcode %}
+
+Now, we want the player to be able to press the **space** key to shoot the missiles, which means that in our **obj_player** script, where we tell PixelPad to move our spaceship if we press the arrow keys, we need to tell it to shoot a missile when we press the space key!
+
+This is how you do that:
+
+{% code obj_player/loop %}
+...
+if key_was_pressed('space'):
+  projectile = object_new('obj_projectile')
+  projectile.x = self.x
+  projectile.y = self.y
+{% endcode %}
+
+When we run that code, we will notice that misisles appear, but they don't go anywhere! Let's fix that.
+
+We need to put some code in the **obj_projectile** script that tells it to always go up! So in the loop code, we place the following line:
+
+{% code obj_projectile/loop %}
+self.y = self.y + 4
+{% endcode %}
+
+4 is the speed the missile will travel, play around with that number and make sure you like the feel of it!
+
+That's it for this class, next class we look at commenting!
+
+See you guys in 2 weeks :)
+
 ## September 28, 2019
 
 Hey guys! This week we made the spaceship move when we pressed on the arrow keys! Finally we have some working mechanics to this game!
