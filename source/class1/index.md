@@ -37,9 +37,9 @@ previousX = self.x
 previousY = self.y
 {% endcode %}
 
-Alright, that was the bulk of todays lesson! Hope you guys have a good Halloween and I'll see you next week!
+Alright, that was the bulk of today's lesson! Hope you guys have a good Halloween and I'll see you next week!
 
-## October 12, 2019
+## October 19, 2019
 
 Hey Guys! This week was catch up / commenting week! The task for today was to comment **every** single line of code (including the spaces) for 2 reasons:
 1. To show me that you know what's going on in class and you are not just copying down code

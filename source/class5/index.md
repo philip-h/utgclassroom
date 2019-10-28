@@ -32,7 +32,7 @@ Now we need to make sure that our PlayerShip, EnemyShip, and GreenLaser are all 
 
 And that's all folks. Next week we take a look at particle systems!!
 
-## October 12, 2019
+## October 19, 2019
 
 This week we talked about RigidBody2D and BoxCollider2D! These are just components that we can add to our GameObjects to make them behave like actual objects in the real world!
 

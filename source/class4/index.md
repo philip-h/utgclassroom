@@ -32,7 +32,8 @@ a.y = 200
 {% endcode %}
 
 And that's it! Next week we tackle movement with our keyboard! See you guys then!
-## October 12, 2019
+
+## October 19, 2019
 
 Hey Jr. Coders!
 

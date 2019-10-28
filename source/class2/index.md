@@ -48,7 +48,7 @@ if health &lt;= 0:
 
 And that's it! Wow, our game is really coming together! See you guys next week! :D
 
-## October 12, 2019
+## October 19, 2019
 
 Hey Space Invaders! This week we created an asteroid feild!!!
 
