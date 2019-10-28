@@ -4,6 +4,49 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+## October 26
+
+What's up slashers?! Sorry once again for being late! You guys were awesome though getting all the tables and the chairs set up!
+
+This week we started did Lesson 5 (linear interpolation)! This lesson made our slice trails look pretty good!
+
+For those of you that were struggling this lesson, here is the obj_slicer loop code that got a lot of you confused!
+
+{% code obj_slicer/loop %}
+# Enter the loop code for obj_slicer here.
+
+self.x = mouse_x()
+self.y = mouse_y()
+
+speedX = self.x - previousX
+speedY = self.y - previousY
+
+if mouse_is_pressed('left'):
+  for i in range(25):
+    posX = previousX + speedX * i/25
+    posY = previousY + speedY * i/25
+    trail = object_new('obj_slicetrail')
+    trail.x = posX
+    trail.y = posY
+    fruit = collision_check(trail, "obj_fruit")
+    if fruit:
+      object_destroy(fruit)
+
+
+previousX = self.x
+previousY = self.y
+{% endcode %}
+
+Alright, that was the bulk of todays lesson! Hope you guys have a good Halloween and I'll see you next week!
+
+## October 12, 2019
+
+Hey Guys! This week was catch up / commenting week! The task for today was to comment **every** single line of code (including the spaces) for 2 reasons:
+1. To show me that you know what's going on in class and you are not just copying down code
+2. For you to see the lines that you do not understand so you can ask me (or another classmate!)
+
+Next week we will work on "Linear Interpolation" so our obj_slicer looks cool!
+
 ## October 5, 2019
 
 Hey guys! So today was a catch up day for the guys who missed class last week, and to ask any and all of your questions!

@@ -4,6 +4,65 @@ name: class5
 icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
+## October 26, 2019
+
+Hey GameDevs! This week we continued on with this notion of hit detection!
+The first thing we did was give our GreenLaser GameObject a BoxCollider2D, and made sure to check the **Is Trigger** box on the inspection pane!
+
+Now in our LaserController script, we will write some code very similar to last class, that is, if the laser hits the enemy, destroy both the enemy and the laser!
+
+{% code LaserController.cs %}
+...
+void Update() 
+{
+  ...
+}
+private void OnEnterTrigger2D(Collider2D collision)
+{
+  if (collision.gameObject.tag == "Enemy")
+  {
+    Destroy(collision.gameObject);
+    Destroy(gameObject);
+  }
+}
+...
+{% endcode %}
+
+Now we need to make sure that our PlayerShip, EnemyShip, and GreenLaser are all PreFabs (they all have blue cubes) to ensure that whenever we create (or spawn) more of these GameObjects, they will have all the properties we just spent 2 days adding!
+
+And that's all folks. Next week we take a look at particle systems!!
+
+## October 12, 2019
+
+This week we talked about RigidBody2D and BoxCollider2D! These are just components that we can add to our GameObjects to make them behave like actual objects in the real world!
+
+So any GameObject with a RigidBody2D component is treated as an object would in the real world: they will be affected by gravity, friction, mass, and more!
+
+Now for BoxCollider2D! If we want 2 or more objects to interact with one another, we will use some sort of **collider**. This tells unity to treat the 2 objects as solid objects: two objects with colliders on them won't pass through each other, they will be affected by each other, just like in real life.
+Now with colliders, we have the option **Is Trigger** which tells unity to not treat it like a solid object anymore, but to simply let us know if anything collides with the object! This is the one we will use heavily!
+
+So, put RigidBody2Ds and BoxCollider2Ds on the PlayerShip and EnemyShip, and on the PlayerShip make sure to check the **Is Trigger** box.
+
+Putting a collider with a trigger on a game object gives us the ability to utilise the **OnTriggerEnter2D()** function, which goes off whenever something collides with us! We'll use it to check whether or not an EnemyShip collides with us! If it does, we will destroy both our ship and the EnemyShip!
+
+{% code PlayerController.cs %}
+...
+void Update() 
+{
+  ...
+}
+private void OnEnterTrigger2D(Collider2D collision)
+{
+  if (collision.gameObject.tag == "Enemy")
+  {
+    Destroy(collision.gameObject);
+    Destroy(gameObject);
+  }
+}
+...
+{% endcode %}
+
+And that's it! Next class we work on the laser's hit detection!
 
 ## October 5, 2019
 
