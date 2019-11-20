@@ -4,6 +4,41 @@ name: class4
 icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
+## November 16, 2019
+
+Sup Jr. Devs! 
+
+This week we looked at Lesson 3, and you guys worked more or less independantly as I walked around and helped you with your code, and errors.
+
+In a coming week, really soon, I will post all the code that you should have up till that point, but right now, all ow you are either ahead or where you should be! 
+
+Great job guys!
+
+I'll see you next week.
+
+## November 2 & 9, 2019
+
+So as you guys know, I was away on November 2nd, so this week we just made sure everyone was on the same page, there were no errors in the code, and we understood what was taught in November 2nd.
+
+This week we worked on getting our player moving! Most of you guys did it, no problem! For those of you who struggled a little (or want a reminder) We put the following code in the **obj_player** script in the **loop** tab:
+
+{% code obj_player/start %}
+if key_is_pressed('right'):
+  self.x = self.x + 3
+  
+elif key_is_pressed('up'):
+  self.y = self.y + 3
+
+elif key_is_pressed('left'):
+  self.x = self.x - 3
+  
+elif key_is_pressed('down'):
+  self.y = self.y - 3
+{% endcode %}
+
+You did this by following the Lesson 2 in the Space Game!
+
+I'll see you guys next week when we talk about spawning asteroids! OUUUUU!
 
 ## October 26, 2019
 

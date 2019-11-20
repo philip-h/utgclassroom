@@ -4,7 +4,21 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
-## October 26
+## November 16, 2019
+
+Hey fruit attackers! This week we primarily worked on Lesson 8 - Animations! Keep on going! Reminder that when we finish the game through the tutorial that we will have time in class to add extra features that the class agrees on! I'm excited for that to happen! 
+
+See you guys next week!
+
+## November 2 & 9, 2019
+
+Hey slashers! So as you guys know, I was away on November 2nd, so this week we just made sure everyone was on the same page, there were no errors in the code, and we understood what was taught in November 2nd. 
+
+Most of you guys should be on the score lesson, making white numbers appear on the screen to keep track of our score and time. As always, I appreciate your behaviour when I was absent, and I heard nothing but good things from the teacher who supplied!
+
+See you guys next week.
+
+## October 26, 2019
 
 What's up slashers?! Sorry once again for being late! You guys were awesome though getting all the tables and the chairs set up!
 

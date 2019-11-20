@@ -5,6 +5,72 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## November 16, 2019
+
+This week we tackled explosions!
+
+To begin, create an explosion particle system as a new game object! Follow all the steps we did last week to make the particle system look like explosions (remember the explosion sprite we have)
+
+Now we need a way to make the explosion happen! Well, we want the explosion to happen when our GreenLaser hits an EnemyShip!
+
+Easy enough, in our LaserController, let's add code to **Instantiate** an explosion (Just like how our PlayerController **Instantiates** a GreenLaser)
+
+{% code LaserController.cs %}
+public class LaserController : MonoBehaviour
+{
+    ...
+    public GameObject explosion;
+    
+    void Start()
+    {
+    }
+
+    void Update()
+    {
+      ...
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            ...
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+    }
+}
+{% endcode %}
+
+Remember that we need to create a public field at the top of our script so that Unity knows what explosion we are talking about! 
+
+And that's it! Next week will talk about spawners and how to spawn enemy automatically!
+
+Have a great week!
+
+## November 2 & 9, 2019
+
+So as you guys know, I was away on November 2nd, so this week we just made sure everyone was on the same page, there were no errors in the code, and we understood what was taught in November 2nd.
+
+This week we looked at particle systems! How they work, and how they can make our game look cool!
+
+Since there is no code for particle systems, you will have to bare with this wall of text explaining them!
+
+A particle system is simply a **component** (just like **BoxCollier2D**) that generates a bunch of squares from the GameObject's origin. These squares can become any sprite we wish tem to be. We can also change the properties of the particle system that tell the boxes how to be generated and where to go!
+
+So Right Click on our PlayerShip game object and create an EmptyGameObject inside of the PlayerShip object, call it **ParticleEmitter**. Now on this new GameObject add a **ParticleSystem** component. Play around with all the settings, but the 2 most important ones are the **renderer** property and the **shape** property.
+
+The **shape** property simply needs to change so that the **shape** is not a cone, but an edge. Then change the rotation on the z axis to 180 degrees so the squares shoot down from the Playership. 
+
+The **renderer** property needs a Material to render so we don't always see purple squares! Let's make a material.
+
+In the Material's folder (if you don't have one, make one) create a new Material and set the Blending option to **Alpha Blending**. This blending asks for a sprite to render, so give it the sprite of the ship trail!
+
+Now drag this new Material we just made onto the ParticleEmitter's Renderer's Material field.
+
+BOOM, cool looking ship trails!
+
+Next week we will look at explosions!
+
 ## October 26, 2019
 
 Hey GameDevs! This week we continued on with this notion of hit detection!

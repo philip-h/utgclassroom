@@ -4,6 +4,91 @@ name: class2
 icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
+
+## November 16, 2019
+
+Hey guys!
+
+This week in class, we worked more independently so that I could help those of you who needed to catch up! We worked on lesson 7 (A new challenger approaches) and modified it a little bit so it would work with our system of spawning objects. 
+
+Here's is how we spawn our **obj_enemy** object, instead of using the **enemyTimer**
+
+{% code obj_spawner/loop %}
+if timer > 60:
+  asteroid = object_new('obj_asteroid')
+  ...
+  
+  chance_shield = random.randint(0,100)
+  if chance_shield < 10:
+    ...
+
+  chance_ammo = random.randint(0,100)
+  if chance_ammo < 10:
+    ...
+
+  chance_enemy = random.randint(0, 100)
+  if chance_enemy < 5:
+    enemy = object_new('obj_enemy')
+    enemy.x = random.randint(-280, 280)
+    
+  timer = 0
+{% endcode %}
+
+And that's all folks. Next week we begin to put the finishing touches on our game, creating new rooms and giving the players an opportunity to actually win or lose.
+
+See you next week! 
+
+## November 2 & 9, 2019
+
+Waddup Invaders?! 
+
+So as you guys know, I was away on November 2nd, so this week we just made sure everyone was on the same page, there were no errors in the code, and we understood what was taught in November 2nd.
+
+So this week we took another look at random numbers to see if we could use them to spawn different objects falling from the sky.
+
+We began with 2 object **obj_ammo** and **obj_shield**, remembering that we actually had to create the new objects by pressing the green **+** next to the **Object Scripts** label. 
+
+Now we need to ensure that they have an associated sprite. Let's also make sure they spawn above the screen so they will fall! Both objects will look like this:
+
+{% code obj_ammo&shield/start %}
+sprite = sprite_new('spr_xxx')
+{% endcode %}
+
+Let's make sure that, when they spawn, they will actually fall! In both objects, place the following code in the loop tab
+
+{% code obj_ammo&shield/loop %}
+self.y = self.y - 4
+{% endcode %}
+
+Now all that's left to do is spawn the two new objects!
+
+We decided as a class to go with the method of "Every second, the objects will have a X% chance of spawning"... Here's how to implement that.
+
+In our **obj_spawner** loop tab, below where we spawn our asteroids, this is the code we came up with:
+
+{% code obj_spawner/loop %}
+if timer > 60:
+  asteroid = object_new('obj_asteroid')
+  ...
+  
+  chance_shield = random.randint(0,100)
+  if chance_shield < 10:
+    shield = object_new('obj_shield')
+    shield.x = random.randint(-280, 280)
+  
+  chance_ammo = random.randint(0,100)
+  if chance_ammo < 10:
+    ammo = object_new('obj_ammo')
+    ammo.x = random.randint(-280,280)
+  
+  timer = 0
+{% endcode %}
+
+This code says that every time the timer reaches 60 (meaning 1 second has passed) spawn an asteroid. Then generate 2 random numbers, both between 0 and 100. If the corresponding random number is less than 10 (and there's actually a 10% chance of that happening) then spawn the corresponding object. Finally reset the timer to 0.
+
+That's it! Next class we'll look at spawning our Enemy ships!
+
+
 ## October 26, 2019
 
 Waddup Invaders of Space?!
