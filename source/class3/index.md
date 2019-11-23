@@ -5,6 +5,41 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## November 23, 2019
+
+Hey guys!
+This week, I'm unashamed to say we spent the bulk of it figuring out why our **GreenLasers** were not colliding with our **EnemyShips**. After lots of spell checking, RigidBody2D adding and Script setting, we got everyone in the class on board with Laser collisions!
+
+One of the most productive classes ever!
+
+Near the end, we began to introduce spawners!
+
+I had you guys create an empty GameObject called **Spawner**, then a new C# script called **SpawnerController**.
+Right now, the **SpawnerController** looks like:
+
+{% code SpawnerController.cs %}
+public class SpawnerController : MonoBehaviour
+{
+    public GameObject enemyShip;
+    // Start is called before the first frame update
+    void Start()
+    {
+        Instantiate(enemyShip, transform.position, Quaternion.identity);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+}
+{% endcode %}
+
+Noting that we only added 2 lines of code: One line to tell Unity what an enemyShip is, and another line to actually spawn the enemy ship!
+
+Next class we'll actually implement the whole **SpawnerController**.
+
+See you next week!
+
 ## November 16, 2019
 
 This week we tackled explosions!

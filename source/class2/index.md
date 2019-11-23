@@ -5,6 +5,15 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## November 23, 2019
+
+Hello Space Adventurers!
+
+So most of you guys are coming to and end! As requested, we will be finishing off the game independently so we can work at our own paces!
+By the looks of it, most of you will be done by next week, leaving us plenty of time to implement some really cool features!
+
+See you guys next week!
+
 ## November 16, 2019
 
 Hey guys!

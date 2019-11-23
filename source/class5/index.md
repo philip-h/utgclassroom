@@ -5,6 +5,45 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## November 23, 2019
+
+Hey guys!
+
+This week we looked at spawners!
+After making sure that we could all hit enemies with our **GreenLasers** we created a not-so-great spawner that we will improve next week!
+
+I had you guys create an empty GameObject called **Spawner**, then a new C# script called **SpawnerController**.
+Right now, the **SpawnerController** looks like:
+
+{% code SpawnerController.cs %}
+public class SpawnerController : MonoBehaviour
+{
+    public GameObject enemyShip;
+    // Start is called before the first frame update
+    void Start()
+    {
+        InvokeRepeating("EnemySpawner", 1f, 3f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void EnemySpawner()
+    {
+        Instantiate(enemyShip, transform.position, Quaternion.identity);
+    }
+}
+{% endcode %}
+
+And that's all the code we wrote today! It never seems like a lot after the fact, but I'm sure it felt like a lot during the course of the hour!
+
+Next class, as I said above, we'll work on making the spawner less bad!
+
+Have a great week!
+
 ## November 16, 2019
 
 This week we tackled explosions!

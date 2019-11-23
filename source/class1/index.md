@@ -4,6 +4,26 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+
+## November 23, 2019
+
+Hey guys!
+So your games are really starting to come together! Most of you were finishing up lesson 9 today, which is awesome! That gives us plenty of time to implement all the cool features you had in mind at the beginning of hte year.
+
+Next class I will post all the working code for the Fruit Ninja game so you can compare!
+
+One quick note, I noticed a lot of students were having trouble with the score animation at the end of the game!
+In **rm_end** make sure your **start** tab has the following code:
+
+{% code rm_end/start %}
+score_txt = object_new('obj_text')
+score_txt.align = 'center'
+{% endcode %}
+
+Or you will get errors out the wazoo!
+
+See you next week :D
+
 ## November 16, 2019
 
 Hey fruit attackers! This week we primarily worked on Lesson 8 - Animations! Keep on going! Reminder that when we finish the game through the tutorial that we will have time in class to add extra features that the class agrees on! I'm excited for that to happen! 

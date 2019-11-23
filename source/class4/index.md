@@ -4,11 +4,21 @@ name: class4
 icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
+## November 23, 2019
+
+Hey Jr. Devs!
+
+Wow oh wow! You guys really surprised me! Some of you went ahead ALL THE WAY to lesson 7! Some of you are still on lesson 4 and THAT'S OKAY! In fact, it's perfect!
+
+I love the passion you guys are bringing to the classroom, and the enthusiasm to code is really inspriring, even for a coding teacher.
+
+I'll see you guys next week for a bit more of a structured day!
+
 ## November 16, 2019
 
 Sup Jr. Devs! 
 
-This week we looked at Lesson 3, and you guys worked more or less independantly as I walked around and helped you with your code, and errors.
+This week we looked at Lesson 3, and you guys worked more or less independently as I walked around and helped you with your code, and errors.
 
 In a coming week, really soon, I will post all the code that you should have up till that point, but right now, all ow you are either ahead or where you should be! 
 
