@@ -5,6 +5,198 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## January 11, 2020
+
+Hey guys! Welcome to a new semester at Reidmount! I'm going to take this post to post all of the code for the completed space game!!
+
+{% code game/start %}
+room_set('rm_level1')
+score = 0
+
+loa = []
+{% endcode %}
+
+{% code rm_level1/start %}
+bg = object_new('obj_background')
+player = object_new('obj_player')
+
+object_new('obj_spawner')
+{% endcode %}
+
+{% code rm_level1/loop %}
+if game.score >= 50:
+  room_set('rm_victory')
+{% endcode %}
+
+{% code rm_victory/start %}
+object_new('obj_victory')
+{% endcode %}
+
+{% code rm_game_over/start %}
+object_new('obj_game_over')
+{% endcode %}
+
+{% code obj_player/start %}
+sprite = sprite_new('spr_player')
+health = 3
+godMode = False
+{% endcode %}
+
+{% code obj_player/loop %}
+
+if key_is_pressed('right'):
+  self.x = self.x + 3
+  
+elif key_is_pressed('up'):
+  self.y = self.y + 3
+
+elif key_is_pressed('left'):
+  self.x = self.x - 3
+  
+elif key_is_pressed('down'):
+  self.y = self.y - 3
+  
+
+if key_was_pressed('space'):
+  if godMode:
+    godMode = False
+    for a in game.loa:
+      object_destroy(a)
+      game.score += 1
+  projectile = object_new('obj_projectile')
+  projectile.x = self.x
+  projectile.y = self.y
+
+if health <= 0:
+  object_destroy(self)
+  room_set('rm_game_over')
+ 
+ 
+  
+shield = collision_check(self, 'obj_shield')
+if shield:
+  object_destroy(shield)
+  health += 1
+  
+ammo = collision_check(self,'obj_ammo')
+if ammo:
+  object_destroy(ammo)
+  godMode = True
+{% endcode %}
+
+{% code obj_projectile/start %}
+sprite = sprite_new('spr_projectile')
+{% endcode %}
+
+{% code obj_projectile/loop %}
+self.y = self.y + 4
+
+asteroid = collision_check(self, 'obj_asteroid')
+if asteroid:
+  object_destroy(asteroid)
+  object_destroy(self)
+  
+enemy = collision_check(self, 'obj_enemy')
+if enemy:
+  enemy.health -= 1
+  object_destroy(self)
+  
+  
+if self.y > 400:
+  object_destroy(self)
+{% endcode %}
+
+{% code obj_asteroid/start %}
+sprite = sprite_new('spr_asteroid')
+{% endcode %}
+
+{% code obj_asteroid/loop %}
+self.y = self.y - 3
+
+
+player = collision_check(self, 'obj_player')
+if player:
+  player.health = player.health-1
+  object_destroy(self)
+  
+  
+if self.y < -600:
+  object_destroy(self)
+{% endcode %}
+
+{% code obj_enemy/start %}
+sprite = sprite_new('spr_enemy')
+self.y = 300  
+health = 3
+{% endcode %}
+
+{% code obj_enemy/loop %}
+self.y = self.y - 3
+{% endcode %}
+
+{% code obj_background/start %}
+sprite = sprite_new('spr_background')
+{% endcode %}
+
+{% code obj_spawner/start %}
+import random
+
+timer = 0
+
+self.y = 500
+{% endcode %}
+
+{% code obj_spawner/loop %}
+timer = timer + 1
+
+if timer > 60:
+  asteroid = object_new('obj_asteroid')
+  asteroid.x = random.randint(-280, 280)
+  asteroid.y = 300
+  game.loa.append(asteroid)
+  print(game.loa)
+  
+  chance_shield = random.randint(0,100)
+  if chance_shield < 10:
+    shield = object_new('obj_shield')
+    shield.x = random.randint(-280, 280)
+  
+  chance_ammo = random.randint(0,100)
+  if chance_ammo < 10:
+    ammo = object_new('obj_ammo')
+    ammo.x = random.randint(-280,280)
+  timer = 0
+{% endcode %}
+
+{% code obj_shield/start %}
+sprite = sprite_new('spr_shield_pickup')
+self.y = 300
+{% endcode %}
+
+{% code obj_shield/loop %}
+self.y = self.y - 3
+{% endcode %}
+
+{% code obj_ammo/start %}
+sprite = sprite_new('spr_ammo_pickup')
+
+self.y = 300
+{% endcode %}
+
+{% code obj_ammo/loop %}
+self.y = self.y - 3
+{% endcode %}
+
+{% code obj_victory/start %}
+sprite = sprite_new('spr_victory')
+{% endcode %}
+
+{% code obj_game_over/start %}
+sprite = sprite_new('spr_game_over')
+{% endcode %}
+
+Well, that's everything! Hope you guys had fun making that!! The next game will also be lots of fun! :)
+
 ## November 23, 2019
 
 Hello Space Adventurers!

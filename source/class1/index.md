@@ -5,6 +5,229 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## January 11, 2020
+
+Hey guys! Welcome to a new semester at Reidmount! I'm going to take this post to post all of the code for the completed Fruit Ninja game!!
+
+{% code rm_game/start %}
+score = 0
+
+room_set('rm_game')
+
+import random 
+shakeDuration = 0
+
+spawnBomb = True
+spawnRate = 1
+{% endcode %}
+
+{% code rm_game/loop %}
+shakeDuration -= (1/60)
+if shakeDuration <= 0:
+  shakeDuration = 0
+
+camX = random.randint(-30,30) * shakeDuration
+camY = random.randint(-30,30) * shakeDuration
+camera_set(camX, camY)
+{% endcode %}
+
+{% code rm_game/start %}
+game.score = 0
+bg = object_new('obj_background')
+
+fruit = object_new('obj_fruit')
+fs = object_new('obj_fruitspawner')
+
+s = object_new('obj_slicer')
+
+score_txt = object_new('obj_text')
+score_txt.align = "center"
+score_txt.y = 180
+score_txt.char_size = 0.6
+
+time_left = 30
+
+
+tl_txt = object_new('obj_text')
+tl_txt.x = -220
+tl_txt.y = 190
+tl_txt.char_size = 0.4
+{% endcode %}
+
+{% code rm_game/loop %}
+score_txt.nr = game.score
+tl_txt.nr = time_left
+
+time_left -= 1/60
+if time_left <= 0:
+  room_set("rm_end")
+{% endcode %}
+
+{% code rm_end/start %}
+bg = object_new("obj_background")
+bg.sprite = sprite_new("spr_menubackground")
+
+score_txt = object_new('obj_text')
+score_txt.align = "center"
+score_txt.char_size = 1
+score_txt.nr = game.score
+
+timer = 0
+
+import math
+{% endcode %}
+
+{% code rm_end/loop %}
+if mouse_was_pressed("left"):
+ room_set('rm_game')
+ 
+timer += 0.1
+score_txt.char_size = 2+(math.sin(timer))
+{% endcode %}
+
+{% code obj_fruit/start %}
+import random
+
+# movement
+velX = random.randint(-3, 3)
+velY = random.randint(12,16)
+
+self.x = random.randint(-200, 200)
+
+# sprite
+r = random.randint(0, 3)
+if r == 0:
+  tag = "melon"
+elif r == 1:
+  tag = "strawberry"
+elif r == 2:
+  tag = "orange"
+else: # elif r == 3:
+  if game.spawnBomb:
+    tag = "bomb"
+  else:
+    tag = "melon"
+
+sprite = sprite_new('spr_'+tag)
+{% endcode %}
+
+{% code obj_fruit/loop %}
+velY -= 0.25
+self.y += velY
+self.x += velX
+{% endcode %}
+
+{% code obj_fruitspawner/start %}
+import random
+timer = 0
+self.y -= 300
+{% endcode %}
+
+{% code obj_fruitspawner/loop %}
+timer += 1
+
+if timer > (50 / game.spawnRate):
+  timer = random.randint(0, 40)
+  fruit = object_new('obj_fruit')
+  fruit.y = self.y
+{% endcode %}
+
+{% code obj_slicer/start %}
+sprite = sprite_new('spr_trailcircle')
+sprite_width = 0.9
+sprite_height = 0.9
+
+import math
+prevX = 0
+prevY = 0
+
+speedX = self.x - prevX
+speedY = self.y - prevY
+speed = math.sqrt(speedX * speedX + speedY * speedY)
+{% endcode %}
+
+{% code obj_slicer/loop %}
+self.x = mouse_x()
+self.y = mouse_y()
+
+speedX = self.x - prevX
+speedY = self.y - prevY
+speed = math.sqrt(speedX * speedX + speedY * speedY)
+
+if speed > 20:
+  if resetTrail:
+    resetTrail = False
+  elif mouse_is_pressed('left'):
+    for i in range(25):
+      posX = prevX + speedX * i/25
+      poxY = prevY + speedY * i/25
+      trail = object_new('obj_slicetrail')
+      trail.x = posX
+      trail.y = poxY
+      
+    fruit = collision_check(trail, 'obj_fruit')
+    if fruit:
+      if fruit.tag == 'bomb':
+        game.score = 0
+        explosion = object_new('obj_explosion')
+        explosion.x = fruit.x
+        explosion.y = fruit.y
+      else:
+        game.score += 1
+        splash = object_new('obj_splash')
+        splash.x = fruit.x
+        splash.y = fruit.y
+        ss = sprite_new('spr_'+fruit.tag+'_splash', 7, 5)
+        anim = animation_new(ss, 60, 2, 40)
+        animation_set(splash, anim)
+        
+      fruit.type = destroyed
+      object_destroy(fruit)
+    
+    
+  prevX = self.x
+  prevY = self.y
+{% endcode %}
+
+{% code obj_slicetrail/start %}
+sprite = sprite_new('spr_trailcircle')
+timer = 0
+
+sprite_width = 1
+sprite_height = 1
+{% endcode %}
+
+{% code obj_slicetrail/loop %}
+timer += 1
+if timer >= 30:
+  object_destroy(self)
+  
+sprite_width = sprite_width - 1/30
+sprite_height = sprite_height - 1/30
+{% endcode %}
+
+{% code obj_background/start %}
+sprite = sprite_new('spr_background')
+sprite_width = 0.8
+sprite_height = 0.8
+{% endcode %}
+
+{% code obj_explosion/start %}
+ss = sprite_new('spr_explosion', 4, 4)
+anim = animation_new(ss, 20, 0, 16)
+animation_set(self, anim)
+sprite_width = 2
+sprite_height = 2
+game.shakeDuration = 1
+object_destroy(self, 0.8)
+{% endcode %}
+
+{% code obj_splash/start %}
+object_destroy(self, 1)
+{% endcode %}
+
+Well, that's everything! Hope you guys had fun making that!! The next game will also be lots of fun! :)
+
 ## November 23, 2019
 
 Hey guys!

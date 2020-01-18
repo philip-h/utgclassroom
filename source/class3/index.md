@@ -5,6 +5,213 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## January 11, 2020
+
+Hey guys! Welcome to a new semester at Reidmount! I'm going to take this post to post all of the script code for the completed Space game!!
+
+{% code PlayerController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 5f;
+    public GameObject laser;
+    public int health = 3;
+    public Text healthUI;
+    public int score = 0;
+    public Text scoreUI;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(laser, transform.position, Quaternion.identity);
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        healthUI.text = "Health: " + health;
+        scoreUI.text = "Score: " + score;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+      if (collision.gameObject.tag == "Enemy")
+      {
+            Destroy(collision.gameObject);
+            health--;
+      }
+    }
+}
+{% endcode %}
+
+{% code LaserController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LaserController : MonoBehaviour
+{
+    public float speed = 5f;
+    public GameObject explosion;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Move the laser up!
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
+
+        if (transform.position.y > 10)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+            gameObject.GetComponent<PlayerController>().score += 25;
+            Destroy(gameObject);
+        }
+    }
+}
+{% endcode %}
+
+{% code EnemyController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyController : MonoBehaviour
+{
+    public float speed = 3f;
+    public GameObject enemyLaser;
+    // Start is called before the first frame update
+    void Start()
+    {
+        InvokeRepeating("ShootLaser", 0.1f, 5f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
+
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void ShootLaser()
+    {
+        Instantiate(enemyLaser, transform.position, Quaternion.identity);
+    }
+}
+{% endcode %}
+
+{% code EnemyLaserController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyLaserController : MonoBehaviour
+{
+    public float speed = 20f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log("Speed " + speed);
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerController>().health--;
+            Destroy(gameObject);
+        }
+    }
+}
+{% endcode %}
+
+{% code SpawnerController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnerController : MonoBehaviour
+{
+    public GameObject enemyShip;
+    // Start is called before the first frame update
+    void Start()
+    {
+        InvokeRepeating("EnemySpawner", 0.5f, 1f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void EnemySpawner()
+    {
+        Vector2 enemyPosition =
+            new Vector2(Random.Range(-8f, 8f), transform.position.y);
+        Instantiate(enemyShip, enemyPosition, Quaternion.identity);
+    }
+}
+{% endcode %}
+
+Boom! That's it! I hope you gyus had fun making this game! The next game we make will also be a lot of fun!! :D
+
 ## November 23, 2019
 
 Hey guys!
