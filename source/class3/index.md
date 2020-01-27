@@ -229,7 +229,7 @@ public class SpawnerController : MonoBehaviour
 }
 {% endcode %}
 
-Boom! That's it! I hope you gyus had fun making this game! The next game we make will also be a lot of fun!! :D
+Boom! That's it! I hope you guys had fun making this game! The next game we make will also be a lot of fun!! :D
 
 ## November 23, 2019
 

@@ -30,6 +30,7 @@ Hey guys! This week we started the balloon fight course! Most of you got to Leve
 Remember that when going through the tutorial, when you see code that you already wrote, don't copy it down again, but use it as a guide to see where to write new code!
 
 See you next week!
+
 ## January 11, 2020
 
 Hey guys! Welcome to a new semester at Reidmount! I'm going to take this post to post all of the code for the completed space game!!
