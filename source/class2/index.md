@@ -5,6 +5,31 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## January 25, 2020
+
+Hello Balloon Fighters!
+You guys are well on your way to this course, most of you finishing the week on lesson 4/5! One thing to note is that in **Lesson 5** when you make the **obj_balloon_spawner** the tutorial misses something.. You need to add the **object_new(...)** code in your game for the spawner to work, like this:
+
+{% code game/start %}
+...
+bubble_spawner = object_new('obj_bubble_spawner')
+{% endcode %}
+
+Then in your **obj_bubble_spawner** move it down so that the bubbles spawn at the bottom of the screen:
+
+{% code obj_bubble_spawner/start %}
+...
+self.y = -300
+{% endcode %}
+
+That's it for this week! See you all next week
+
+## January 18, 2020
+
+Hey guys! This week we started the balloon fight course! Most of you got to Level 2/3, which was awesome!
+Remember that when going through the tutorial, when you see code that you already wrote, don't copy it down again, but use it as a guide to see where to write new code!
+
+See you next week!
 ## January 11, 2020
 
 Hey guys! Welcome to a new semester at Reidmount! I'm going to take this post to post all of the code for the completed space game!!

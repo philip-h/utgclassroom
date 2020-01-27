@@ -4,6 +4,73 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+## January 25, 2020
+
+Hello Clashers!
+Let's take a look at how to do something then the user clicks on a button.
+I'm going to do the code for the obj_robobutton, but just make sure that you do the code for the button that's on the bottom of your screen!
+
+So the first thing we can do is check to see whether or not we actually click on the screen
+
+{% code obj_robobutton/loop %}
+if mouse_was_pressed('left'):
+  print("We pressed the mouse!")
+{% endcode %}
+
+Now, if you click anywhere on the screen, you should see "We pressed the mouse!" printed to the console.
+But we only want to print something if we click on the robo button! Let's see how to do that!
+
+{% code obj_robobutton/loop %}
+if mouse_was_pressed('left'):
+  if abs(self.x - mouse_x()) < 40 and abs(self.y - mouse_y()) < 40:
+    print("pressed robobutton")
+{% endcode %}
+
+Now it will only print something if we press the robo button!
+
+The last thing we did was upload our sprite sheet for the actual robot character (and dino chararcter)!
+In **obj_robot** we began to setup the animation
+
+{% code obj_robot/start %}
+sprite_sheet = sprite_new('sprs_robos',5,7)
+walk_right = animation_new(sprite_sheet, 12, 0, 6)
+{% endcode %}
+
+**NOTE** IF you started with Dino's, then the sprite_new() function would take the numbers (...,5,5) not (...5,7)
+
+That's it for this week! Next week we'll start spawning robots (or dinos)
+
+## January 18, 2020
+
+What's up software developers?
+So this week, we began to setup our Clash Royale mobile game!
+The first thing you guys will need are the sprites:
+https://drive.google.com/drive/u/0/folders/1Ox6JfSpD9Y1YkCtxvq4KdacANm7bvRNe
+
+All we did this week was upload the sprites to PixelPad (making sure to give them good names), then place a background, the two base sprites, and the two button sprites on the screen just like in Clash Royale.
+
+Here's what the code looks like, remembering that for this code to work, I created the necessary objects already!
+
+{% code game/start %}
+object_new('obj_background')
+
+robobase = object_new('obj_robobase')
+robobase.y = -180
+
+dinobase = object_new('obj_dinobase')
+dinobase.y = 
+
+robobutton = object_new('obj_robobutton')
+robobutton.y = -180
+robobutton.x = -200
+
+dinobutton = object_new('obj_dinobutton')
+dinobutton.y = 180
+dinobutton.x = 200
+{% endcode %}
+
+That's all for now! Next week, we will see how to check whether or not we actually click on a button!
+See you next week!
 
 ## January 11, 2020
 

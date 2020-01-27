@@ -4,6 +4,25 @@ name: class4
 icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
+## January 25, 2020
+
+Not sure what you did as I was not present. I'll discuss why next week (it was not my fault, I promise :) )
+I will update this when I know!
+
+## January 18, 2020
+
+Hey guys! So this week in class we did some coding for the space game. Then about half way though the class, we had some structured free time, some of us working on code, Scratch, and typing games.
+
+See you next week!
+
+## January 11, 2020
+
+HELLO! Welcome back to another semester here at Riedmuount!
+
+This week we took some time to look at some code and figure out what it does, all of this to strengthen our understanding of what code is and what it does. You guys all surprised me with how much you remembered from last week.
+
+Anyway, see you guys next week!
+
 ## November 23, 2019
 
 Hey Jr. Devs!

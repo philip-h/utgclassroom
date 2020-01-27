@@ -5,6 +5,24 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## January 25, 2020
+
+Hey guys!
+This week in class, when we all got the unity asset pack imported (oops) we simply started to play around with how to use the sprites to create a scene.
+
+Next week we'll construct a scene together!
+
+See you then :D
+
+## January 18, 2020
+
+Hey guys!
+This week we got soooo much done! It was awesome.... Jokes.
+We went through the Unity Asset store and agreed on a sprite pack to download. The download may or may not have taken all class, but it's all good!
+The Asset Pack we agreed on was called **SunnyLand Forest**. Make sure we all import that pack for next week's class.
+
+See you next week!
+
 ## January 11, 2020
 
 Hey guys! Welcome to a new semester at Reidmount! I'm going to take this post to post all of the script code for the completed Space game!!
@@ -62,6 +80,7 @@ public class PlayerController : MonoBehaviour
         }
 
         healthUI.text = "Health: " + health;
+
         scoreUI.text = "Score: " + score;
     }
 
