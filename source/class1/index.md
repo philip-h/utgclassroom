@@ -4,6 +4,25 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+
+## March 14, 2020
+
+Hey guys!
+
+So as you've figured out by now, Reidmount was closed this past Saturday, and will be closed at least until April 4th.
+
+First thing's first, try to finish lesson 5 by the time we get back together!
+
+Once that's done, here are a few options to work, at your leisure, on some of your Python fundamentals; the following websites can help with that!
+https://www.codecademy.com/
+https://www.codingame.com/
+https://codecombat.com/
+https://codingbat.com/python
+
+
+FOR NEXT WEEK I will post a follow-through lesson for finishing up to Chapter 5!
+Have a great march break guys!
+
 ## January 25, 2020
 
 Hello Clashers!

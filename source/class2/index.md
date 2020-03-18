@@ -4,6 +4,32 @@ name: class2
 icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
+## March 14, 2020
+
+Hey guys!
+
+So as you've figured out by now, Reidmount was closed this past Saturday, and will be closed at least until April 4th.
+
+First thing's first, make sure you finish off the Balloon Fight tutorial!!
+
+Once that's done, there are a few options.
+
+The first option is to work, at your leisure, on some of your Python fundamentals; the following websites can help with that!
+https://www.codecademy.com/
+https://www.codingame.com/
+https://codecombat.com/
+https://codingbat.com/python
+
+The second option is to try to implement some of the features we wanted to implement in our Balloon Fight game. Here were your suggestions:
+
+2 players (working on that now)
+Players can shoot gumballs at eachother
+A boss
+Power ups: Super speed, more bounciness, God Mode.
+
+Regardless of your choice, when we get back, we will get everyone up to speed with what's going on.
+
+FOR NEXT WEEK I will post a follow through lesson for finishing of the two player implementation.
 
 ## January 25, 2020
 

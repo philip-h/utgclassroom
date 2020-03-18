@@ -4,6 +4,28 @@ name: class4
 icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
+
+## March 14, 2020
+
+So as you've figured out by now, Reidmount was closed this past Saturday, and will be closed at least until April 4th.
+
+Your jobs, over the march break, is to practice coding and typing!
+
+To practice Coding
+https://scratch.mit.edu/
+https://www.codecademy.com/
+https://www.codingame.com/
+https://codecombat.com/
+
+To practice typing
+https://www.typing.com/student/game/tommyq
+https://archive.org/details/msdos_Mario_Teaches_Typing_1992
+https://play.typeracer.com/
+
+Practice at least a couple times a week to keep your skills sharp!
+
+This is where I will keep you updated should anything change!
+
 ## January 25, 2020
 
 Not sure what you did as I was not present. I'll discuss why next week (it was not my fault, I promise :) )

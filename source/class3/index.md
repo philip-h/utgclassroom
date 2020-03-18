@@ -5,6 +5,23 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## March 14, 2020
+
+So as you've figured out by now, Reidmount was closed this past Saturday, and will be closed at least until April 4th.
+
+First thing's first, try to finish up to lesson 6 (in the book) by the time we get back together!
+
+Once that's done, there are a few options to work, at your leisure, on some of your Python fundamentals; the following websites can help with that!
+https://www.codecademy.com/
+https://www.codingame.com/
+https://codecombat.com/
+https://codingbat.com/python
+
+FOR NEXT WEEK I will post a detailed guide on lessons 1 to 5. (So you can still work on 6!)
+
+Have a great march break guys!
+
+
 ## January 25, 2020
 
 Hey guys!
