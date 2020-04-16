@@ -13,6 +13,9 @@ Your work for this week was to ensure that you are all caught up.
 
 Below is the code that we've done together since ending our in-person classes. If you have any questions, please don't hesitate to ask questions on the form: https://staugistine.underthegui.com/forum
 
+Also, here is the link to the PowerPoint:
+https://drive.google.com/file/d/1kiTxvUoLtsm2HLoPCLSgJMCSVWsKSN5H/view?usp=sharing
+
 ### Main Script
 {% code game/start %}
 bg = object_new('obj_background')

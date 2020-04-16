@@ -5,6 +5,24 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## April 11, 2020
+
+Hey guys! 
+So from now on, we will be continuing our classes online using Zoom.
+
+Your work for this week was to continue practicing typing and coding!
+
+Below is the code that we've done together since ending our in-person classes. If you have any questions, please don't hesitate to ask questions on the form: https://staugistine.underthegui.com/forum
+
+The one thing we did together was create a new app called T2.
+
+On PixelPad, go to "My Apps" and press the blue "+ Create a new app" button. That's it!
+
+Can't wait to "see" you all on Saturday!
+
+Also, here is the link to the PowerPoint:
+https://drive.google.com/file/d/1kiTxvUoLtsm2HLoPCLSgJMCSVWsKSN5H/view?usp=sharing
+
 ## March 14, 2020
 
 So as you've figured out by now, Reidmount was closed this past Saturday, and will be closed at least until April 4th.

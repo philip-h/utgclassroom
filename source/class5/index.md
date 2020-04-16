@@ -5,6 +5,82 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## April 11, 2020
+
+Hey guys! 
+So from now on, we will be continuing our classes online using Zoom.
+
+Your work for this week was to ensure that you are all caught up. 
+
+Below is the code that we've done together since ending our in-person classes. If you have any questions, please don't hesitate to ask questions on the form: https://staugistine.underthegui.com/forum
+
+Also, here is the link to the PowerPoint:
+https://drive.google.com/file/d/1kiTxvUoLtsm2HLoPCLSgJMCSVWsKSN5H/view?usp=sharing
+
+{% code PlayerController.cs %}
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 4f;
+    public float jumpForce = 5f;
+    public Rigidbody2D rb;
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+}
+{% endcode %}
+
+That's actually all the code that we have written in class, but there are some things we need to make sure we've done in unity!
+
+1. Ensure we have sorting layers and that everything is on it's proper layer.
+To find out your sorting layer, click on any asset in your Heirarchy (Left box).
+On the right is the Inspector. Look for the Sorting Layer dropdown. I have
+    - Background
+    - Midground
+    - Default
+    - Player
+    - Foreground
+2. Make sure Ellen (your main character) has a 
+    - Rigid Body 2D
+    - Box Collider (Or capsule Collider)
+    - Player Controller Script
+
+3. Make sure your Ground Object has
+    - Tilemap (If it doesn't, refer to Chapter 3 in the Book)
+    - The tilemap should have a Tilemap Collider 2D
+
+Just as a reminder, if at any point you want to change up your scene, here's what you do:
+
+At the top, Find Window.
+Window > 2D > Tile Palette
+
+Then click on the tile you wish to "paint" and paint away!
+
+That's everything we've done up till this point.
+
+Can't wait to "see" you guys on Saturday!
+
+
 ## March 14, 2020
 
 So as you've figured out by now, Reidmount was closed this past Saturday, and will be closed at least until April 4th.
