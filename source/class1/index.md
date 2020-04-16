@@ -4,6 +4,320 @@ name: class1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+## April 11, 2020
+
+Hey guys! 
+So from now on, we will be continuing our classes online using Zoom.
+
+Your work for this week was to ensure that you are all caught up. 
+
+Below is the code that we've done together since ending our in-person classes. If you have any questions, please don't hesitate to ask questions on the form: https://staugistine.underthegui.com/forum
+
+### Main Script
+{% code game/start %}
+bg = object_new('obj_background')
+
+robobase = object_new('obj_robobase')
+robobase.y = -180
+
+dinobase = object_new('obj_dinobase')
+dinobase.y = 180
+
+robobutton = object_new('obj_robobutton')
+robobutton.y = -180
+robobutton.x = -200
+
+dinobutton = object_new('obj_dinobutton')
+dinobutton.y = 180
+dinobutton.x = 200
+{% endcode %}
+
+### Object Scripts
+{% code obj_background/start %}
+# Enter the start code for obj_background here.
+sprite = sprite_new('spr_background')
+{% endcode %}
+
+{% code obj_robobase/start %}
+# Enter the start code for obj_robobase here.
+sprite = sprite_new('spr_robobase')
+sprite_height = 0.25
+sprite_width = 0.25
+
+# 10k Health for the base, setup healthbar
+health = 10000
+healthbar = object_new('obj_healthbar')
+originalWidth = healthbar.sprite_width
+maxHealth = health
+
+healthbar.sprite_width = 10
+
+# Should match obj_robot
+team = 'robot'
+type = 'base'
+{% endcode %}
+
+{% code obj_robobase/loop %}
+# Enter the loop code for obj_robobase here.
+
+# Destroy base if health is depleated
+if health < 0:
+  destroy(self)
+  
+# Setup healthbar
+healthbar.y = self.y + 50
+healthbar.x = self.x 
+
+healthbar.sprite_width = originalWidth * (health/maxHealth)
+{% endcode %}
+
+{% code obj_dinobase/start %}
+# Enter the start code for obj_dinobase here.
+sprite = sprite_new('spr_dinobase')
+sprite_height = 0.12
+sprite_width = 0.12
+
+# 10k Health for the base, setup healthbar
+health = 10000
+healthbar = object_new('obj_healthbar')
+originalWidth = healthbar.sprite_width
+maxHealth = health
+
+# Should match obj_dino
+team = 'dino'
+type = 'base'
+{% endcode %}
+
+{% code obj_dinobase/loop %}
+# Enter the loop code for obj_dinobase here.
+
+# Destroy base if health is depleated
+if health < 0:
+  destroy(self)
+  
+healthbar.y = self.y + 50
+healthbar.x = self.x 
+
+healthbar.sprite_width = originalWidth * (health/maxHealth)
+{% endcode %}
+
+{% code obj_robobutton/start %}
+# Enter the start code for obj_robobutton here.
+sprite = sprite_new('spr_robobutton')
+
+import random
+{% endcode %}
+
+{% code obj_robobutton/loop %}
+# Enter the loop code for obj_robobutton here.
+
+# Check if we clicked on the button
+if mouse_was_pressed('left'):
+  if abs(self.x - mouse_x()) < 40 and abs(self.y - mouse_y()) < 40:
+    # Spawn a robot
+    robot = object_new('obj_robot')
+    robot.x = 0
+    robot.y = -180
+    
+    # Pick a random bridge
+    bridgeSelected = random.randint(1,2)
+    
+    # And go to that bridge
+    if bridgeSelected == 1:
+      robot.destinationX = 190
+      robot.destinationY = 0
+    else:
+      robot.destinationX = -190
+      robot.destinationY = 0
+{% endcode %}
+
+{% code obj_dinoutton/start %}
+# Enter the start code for obj_dinobutton here.
+sprite = sprite_new('spr_dinobutton')
+
+spawnTimer = 0
+
+import random
+{% endcode %}
+
+{% code obj_dinobutton/loop %}
+# Enter the loop code for obj_dinobutton here.
+
+spawnTimer = spawnTimer + 1
+
+# Spawn a dino every thrid of a second
+if spawnTimer >= 20:
+  dino = object_new('obj_dino')
+  dino.x = 0
+  dino.y = 180
+  spawnTimer = 0
+  
+  # Pick a random bridge
+  bridgeSelected = random.randint(1,2)
+  
+  # And go to that bridge
+  if bridgeSelected == 1:
+    dino.destinationX = 190
+    dino.destinationY = 0
+  else:
+    dino.destinationX = -190
+    dino.destinationY = 0
+{% endcode %}
+
+{% code obj_robot/start %}
+# Enter the start code for obj_robot here.
+
+# Setup animations
+sprite_sheet = sprite_new('sprs_robos',5,7)
+walk_right = animation_new(sprite_sheet, 12, 0, 6)
+
+animation_set(self, walk_right)
+
+# Where are we headed to?
+destinationX = 0
+destinationY = 0
+
+# Should match obj_robobase
+team = "robot"
+type = "unit"
+
+# Setup healthbar
+health = 100
+healthbar = object_new('obj_healthbar')
+originalWidth = healthbar.sprite_width
+maxHealth = health
+{% endcode %}
+
+{% code obj_robot/loop %}
+# Enter the loop code for obj_robot here.
+
+# Head to the current destination (one of the bridges)
+if self.x < destinationX:
+  self.x = self.x + 1
+elif self.x > destinationX:
+  self.x = self.x - 1
+  
+if self.y < destinationY:
+  self.y = self.y + 1
+elif self.y > destinationY:
+  self.y = self.y - 1
+
+# Once we get to the bridge, go to the dino base
+if self.x == destinationX and self.y == destinationY:
+  destinationX = 0
+  destinationY = 180
+
+# If we collide with a dino, take away it's health
+if collision_check_all(self, 'unit'):
+  for enemy in collision_check_all(self, 'unit'):
+    if enemy.team != team:
+      enemy.health = enemy.health - 5
+
+# If we collide with the dino base, take away it's health!
+if collision_check_all(self, 'base'):
+  for base in collision_check_all(self, 'base'):
+    if base.team != team:
+      base.health = base.health - 5
+
+# If we are out of health, we die!
+if health <= 0:
+  destroy(healthbar)
+  destroy(self)
+  
+
+# Setup healthbar
+healthbar.y = self.y + 20
+healthbar.x = self.x
+
+healthbar.sprite_width = originalWidth * (health/maxHealth)
+{% endcode %}
+
+{% code obj_dino/start %}
+# Enter the start code for obj_dino here.
+
+# Setup animations
+sprite_sheet = sprite_new('sprs_dinos',5,5)
+walk_right = animation_new(sprite_sheet, 12, 1, 5)
+
+animation_set(self, walk_right)
+
+# Make the dino a bit bigger
+sprite_height = 1.5
+sprite_width = 1.5
+
+# Where are we headed to?
+destinationX = 0
+destinationY = 0
+
+# Should match obj_dinobase
+team = "dino"
+type = "unit"
+
+# Setup heathbar
+health = 100
+healthbar = object_new('obj_healthbar')
+originalWidth = healthbar.sprite_width
+maxHealth = health
+{% endcode %}
+
+<!-- => -->
+
+{% code obj_dino/loop %}
+# Enter the loop code for obj_dino here.
+
+# Head to the current destination (one of the bridges)
+if self.x < destinationX:
+  self.x = self.x + 1
+elif self.x > destinationX:
+  self.x = self.x - 1
+  
+if self.y < destinationY:
+  self.y = self.y + 1
+elif self.y > destinationY:
+  self.y = self.y - 1
+  
+# Once we get to the bridge, go to the dino base
+if self.x == destinationX and self.y == destinationY:
+  destinationX = 0
+  destinationY = -180
+  
+# If we collide with a robot, take away it's health
+if collision_check_all(self, 'unit'):
+  for enemy in collision_check_all(self, 'unit'):
+    if enemy.team != team:
+      enemy.health = enemy.health - 5
+      
+# If we collide with a robot base, take away it's health
+if collision_check_all(self, 'base'):
+  for base in collision_check_all(self, 'base'):
+    if base.team != team:
+      base.health = base.health - 5
+
+# If we are out of health, we die!
+if health <= 0:
+  destroy(healthbar)
+  destroy(self)
+  
+# Setup healthbar
+healthbar.y = self.y + 20
+healthbar.x = self.x
+
+healthbar.sprite_width = originalWidth * (health/maxHealth)
+{% endcode %}
+
+<!-- => -->
+
+{% code obj_healthbar/start %}
+# Enter the start code for obj_healthbar here.
+sprite = sprite_new('spr_healthbar')
+# This line is needed so the helathbar can shrink
+sprite_width = 1
+{% endcode %}
+
+Wow! That's a lot of code! 
+Please try your best to not simply copy this code, but use it to find out why your code does not work!
+
+Have a great week, and I'l "see" you on Saturday! :)
 
 ## March 14, 2020
 

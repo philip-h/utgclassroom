@@ -4,6 +4,284 @@ name: class2
 icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
+
+## April 11, 2020
+
+Hey guys! 
+So from now on, we will be continuing our classes online using Zoom.
+
+Your work for this week was to ensure that you are all caught up. 
+
+Below is the code that we've done together since ending our in-person classes. If you have any questions, please don't hesitate to ask questions on the form: https://staugistine.underthegui.com/forum
+
+### Main Script
+{% code game/start %}
+room_set('rm_level2')
+{% endcode %}
+
+### Room scripts
+{% code rm_level1/start %}
+# Enter the start code for rm_level1 here.
+background = object_new('obj_background')
+
+wall = object_new('obj_wall')
+wall.x = 350
+
+ground = object_new('obj_ground')
+ground.y = -250
+
+player = object_new('obj_player')
+player.x = -100
+
+enemy = object_new('obj_enemy')
+
+bubble_spawner = object_new('obj_bubble_spawner')
+{% endcode %}
+
+{% code rm_level2/start %}
+# Enter the start code for rm_level2 here.
+background = object_new('obj_background')
+player = object_new('obj_player')
+player2 = object_new('obj_player2')
+player2.x = 100
+
+ground = object_new('obj_ground')
+ground.y = -195
+{% endcode %}
+
+### Object Scripts 
+{% code obj_player/start %}
+sprite = sprite_new('spr_player_left')
+
+xVelocity = 0
+yVelocity = 0
+
+maxVelocity = 5
+gravityForce = 0.05
+frictionForce = 0.025
+{% endcode %}
+
+
+{% code obj_player/loop %}
+if key_is_pressed('right'):
+  xVelocity = xVelocity + 0.1
+  sprite = sprite_new('spr_player_right')
+if key_is_pressed('left'):
+  xVelocity = xVelocity - 0.1
+  sprite = sprite_new('spr_player_left')
+if key_is_pressed('up'):
+  self.y = self.y + 3
+  yVelocity = yVelocity + 3
+
+if xVelocity > maxVelocity:
+  xVelocity = maxVelocity
+elif xVelocity < -maxVelocity:
+  xVelocity = -maxVelocity
+  
+if xVelocity > 0:
+  xvelocity = xVelocity - frictionForce
+elif xVelocity < 0:
+  xVelocity = xVelocity + frictionForce
+
+if xVelocity < frictionForce and xVelocity > -frictionForce:
+  xVelocity = 0
+  
+if yVelocity > maxVelocity:
+  yVelocity = maxVelocity
+elif yVelocity < -maxVelocity:
+  yVelocity = -maxVelocity
+
+if yVelocity > 0:
+  yVelocity = yVelocity - gravityForce
+
+if yVelocity < gravityForce and yVelocity > -gravityForce:
+  yVelocity = 0
+
+self.x = self.x + xVelocity
+self.y = self.y + yVelocity
+
+if collision_check(self, 'obj_enemy'):
+  destroy(self)
+
+if collision_check(self, 'obj_bubble'):
+  bubble = collision_check(self, 'obj_bubble')
+  destroy(bubble)
+  yVelocity = maxVelocity
+
+if collision_check(self, 'obj_enemy_balloon'):
+  yVelocity = maxVelocity
+
+if collision_check(self, 'obj_wall'):
+  xVelocity = -xVelocity
+
+if collision_check(self, 'obj_ground'):
+  yVelocity = -yVelocity
+else:
+  yVelocity = yVelocity - gravityForce
+{% endcode %}
+
+{% code obj_enemy/start %}
+# Enter the start code for obj_enemy here.
+sprite = sprite_new('spr_enemy')
+balloon = object_new('obj_enemy_balloon')
+
+timer = 0
+direction = "up"
+{% endcode %}
+
+{% code obj_enemy/loop %}
+# Enter the loop code for obj_enemy here.
+
+balloon.x = self.x
+balloon.y = self.y + 30
+
+if collision_check(balloon, 'obj_player'):
+  destroy(balloon)
+  destroy(self)
+
+timer = timer + 1
+
+if timer == 60:
+  if direction == "up":
+    direction = "down"
+  elif direction == "down":
+    direction = "up"
+  timer = 0
+
+if direction == "up":
+  self.y = self.y + 1
+elif direction == "down":
+  self.y = self.y - 1
+{% endcode %}
+
+{% code obj_bubble/start %}
+# Enter the start code for obj_bubble here.
+sprite = sprite_new('spr_bubble')
+{% endcode %}
+
+{% code obj_bubble/loop %}
+# Enter the loop code for obj_bubble here.
+self.y = self.y + 1
+{% endcode %}
+
+{% code obj_enemy_balloon/start %}
+# Enter the start code for obj_enemy_balloon here.
+sprite = sprite_new('spr_enemy_balloon')
+{% endcode %}
+
+{% code obj_bubble_spawner/start %}
+# Enter the start code for obj_bubble_spawner here.
+import random
+timer = 0
+
+self.y = -300
+{% endcode %}
+
+{% code obj_bubble_spawner/loop %}
+# Enter the loop code for obj_bubble_spawner here.
+timer = timer +1
+
+if timer == 300:
+  bubble = object_new('obj_bubble')
+  randomOffset = random.randint(-300, 300)
+  bubble.x = self.x + randomOffset
+  bubble.y = self.y
+  timer = 0
+{% endcode %}
+
+{% code obj_wall/start %}
+# Enter the start code for obj_wall here.
+sprite = sprite_new('spr_wall')
+{% endcode %}
+
+{% code obj_ground/start %}
+# Enter the start code for obj_ground here.
+sprite = sprite_new('spr_ground')
+{% endcode %}
+
+{% code obj_background/start %}
+# Enter the start code for obj_background here.
+sprite = sprite_new('spr_background')
+{% endcode %}
+
+### Modifiend for 2 player!
+{% code obj_player2/start %}
+# Enter the start code for obj_player2 here.
+sprite = sprite_new('spr_enemy')
+balloon = object_new('obj_enemy_balloon')
+
+xVelocity = 0
+yVelocity = 0
+
+maxVelocity = 5
+gravityForce = 0.05
+frictionForce = 0.025
+{% endcode %}
+
+{% code obj_player2/loop %}
+# Enter the loop code for obj_player2 here.
+balloon.x = self.x
+balloon.y = self.y + 35
+
+if key_is_pressed('s'):
+  xVelocity = xVelocity + 0.1
+if key_is_pressed('a'): #d
+  xVelocity = xVelocity - 0.1
+if key_is_pressed('w'):
+  self.y = self.y + 3
+  yVelocity = yVelocity + 3
+
+if xVelocity > maxVelocity:
+  xVelocity = maxVelocity
+elif xVelocity < -maxVelocity:
+  xVelocity = -maxVelocity
+  
+if xVelocity > 0:
+  xvelocity = xVelocity - frictionForce
+elif xVelocity < 0:
+  xVelocity = xVelocity + frictionForce
+
+if xVelocity < frictionForce and xVelocity > -frictionForce:
+  xVelocity = 0
+
+if yVelocity > maxVelocity:
+  yVelocity = maxVelocity
+elif yVelocity < -maxVelocity:
+  yVelocity = -maxVelocity
+
+if yVelocity > 0:
+  yVelocity = yVelocity - gravityForce
+
+if yVelocity < gravityForce and yVelocity > -gravityForce:
+  yVelocity = 0
+
+self.x = self.x + xVelocity
+self.y = self.y + yVelocity
+
+if collision_check(self, 'obj_enemy'):
+  destroy(self)
+
+if collision_check(self, 'obj_bubble'):
+  bubble = collision_check(self, 'obj_bubble')
+  destroy(bubble)
+  yVelocity = maxVelocity
+
+
+if collision_check(self, 'obj_wall'):
+  xVelocity = -xVelocity
+
+if collision_check(self, 'obj_ground'):
+  yVelocity = -yVelocity
+else:
+  yVelocity = yVelocity - gravityForce
+
+{% endcode %}
+
+Wow! That's a lot of code! 
+Please try your best to not simply copy this code, but use it to find out why your code does not work!
+
+Have a great week, and I'l "see" you on Saturday! :)
+
 ## March 14, 2020
 
 Hey guys!
