@@ -154,6 +154,8 @@ Then click on the tile you wish to "paint" and paint away!
 
 That's everything we've done up till this point.
 
+Can't wait to "see" you guys on Saturday!
+
 
 ## March 14, 2020
 

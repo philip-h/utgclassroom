@@ -320,7 +320,7 @@ sprite_width = 1
 Wow! That's a lot of code! 
 Please try your best to not simply copy this code, but use it to find out why your code does not work!
 
-Have a great week, and I'l "see" you on Saturday! :)
+Have a great week, and I'll "see" you on Saturday! :)
 
 ## March 14, 2020
 
