@@ -1,9 +1,51 @@
 ---
 title: UN401 14:30
 name: class5
+order: 5
 icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
+
+## April 18, 2020
+
+Hey guys!
+Thank you once again for all of your patience with this whole online learning situation!
+
+Today's class was just about fixing the little bugs you had in your code and making sure everyone was 'up-to-snuff' for next week's class.
+
+Today we made sure that everyone had a Ground Collider on their Ellen Prefab.
+
+If you forgot how to set everything up, here's a recap of what we did!
+
+1. Right click **on** Ellen, and **Create Empty Game Object**. Name that object **GroundCheck**. Then add a **Box Collider 2D** to that object and edit the collider so it just covers Ellen's feet.
+
+2. Create a Script: Right Click in the Assets Panel > Create > C# Script. Call it **GroundCheck.cs**.
+
+Here is what that Script looks like:
+
+{% code GroundCheck.cs %}
+// Imports ...
+
+public class GroundCheck : MonoBehaviour
+{
+    // Start is called before the first frame update
+    private PlayerController player;
+    void Start()
+    {
+        player = GetComponentInParent<PlayerController>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+{% endcode %}
+
+And that's it! Next class we will stop our player from double jumpting completely, and begin to make the camera follow our movement!
+
+Have a great week!
 
 ## April 11, 2020
 

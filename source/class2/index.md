@@ -1,9 +1,61 @@
 ---
 title: PY201 10:00
 name: class2
+order: 2
 icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
+
+## April 18, 2020
+
+Hey guys!
+Since we've started our classes online, it will be very difficult for me to help you guys as I normally would if you are on different lessons.
+
+So today we kind of started the part 2 from scratch and you mostly followed along.
+Here is a recap of what I did.
+
+### Beginning of 2P Balloon Fight
+1. Create a **rm_level2** and make sure your **game** script has the following code:
+{% code game/start %}
+...
+room_set('rm_level2')
+{% endcode %}
+
+2. Create **2** new objects: **obj_player1** and **obj_player2**. In **obj_player2** change the controls from **left, right, up, down** to **w, a, s, d** (or vise versa) 
+{% code obj_player2 %}
+# Enter the loop code for obj_player2 here.
+if key_is_pressed('d'):
+  xVelocity = xVelocity + 0.1
+  sprite = sprite_new('spr_player_right')
+if key_is_pressed('a'):
+  xVelocity = xVelocity - 0.1
+  sprite = sprite_new('spr_player_left')
+if key_is_pressed('w'):
+  self.y = self.y + 3
+  yVelocity = yVelocity + 3
+
+...
+{% endcode %}
+
+3. Add some objects into **rm_level2**. I added a background, a ground, and our 2 players:
+{% code rm_level2/start %}
+# Enter the start code for rm_level2 here.
+background = object_new('obj_background')
+
+ground = object_new('obj_ground')
+ground.y = -200
+
+player1 = object_new('obj_player')
+
+player2 = object_new('obj_player2')
+player2.x = 100
+{% endcode %}
+
+4. Relax and look at all the work you did!
+
+If you modified your normal **obj_player** for whatever reason, the loop code is under the [Object Scripts](#Object-Scripts) from last week's post.
+
+That's everything! Enjoy your weeks, keep your hands clean, and I'll 'see' you next week!
 
 ## April 11, 2020
 

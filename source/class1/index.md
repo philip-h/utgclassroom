@@ -1,9 +1,27 @@
 ---
 title: PY301 09:00
 name: class1
+order: 1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+
+## April 18, 2020
+
+Hey guys!
+Since we've started our classes online, it will be very difficult for me to help you guys as I normally would if you are on different lessons.
+
+So today's class was all about all of us beginning to get caught up with eachother.
+
+As a recap of what you have to do for next week:
+
+- Diyan: When you press the **obj_robobutton** make an **obj_robot** spawn on the **obj_robobase**
+- Sanjay: Fix those typos! Make sure everything in the quotes matches what in your **Object Scripts** and **Sprites List** lists.
+- Krish & Ansh: Make your **obj_dino** go from the **obj_dinobase** to the bridge and then to the **obj_robobase**
+- Kaushik: Not sure, we'll talk next week!
+
+See you guys next week!
+
 ## April 11, 2020
 
 Hey guys! 

@@ -1,9 +1,23 @@
 ---
 title: UN401 11:00
 name: class3
+order: 3
 icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
+
+## April 18, 2020
+
+Hey guys!
+Thank you once again for all of your patience with this whole online learning situation!
+
+Today's class was just about fixing the little bugs you had in your code and making sure everyone was 'up-to-snuff' for next week's class.
+
+If you had no errors, then you were extending your terrain so that the Follow Camera didn't look super ugly!
+
+Next class I'm going to __quickly__ create some new terrain and then we'll get stated with the enemies.
+
+Have a great week!
 
 ## April 11, 2020
 

@@ -1,9 +1,30 @@
 ---
 title: PY101 12:00
 name: class4
+order: 4
 icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
+
+## April 18, 2020
+
+Hello my Jr. Coders!
+Today we began the adventure (with Mr. Coverdale too) of beginning our adventure game! Our only goal was to get one of the two sprites downloaded to our computers and uploaded onto PixelPad!
+
+Here's a recap on how to do that:
+- If you wanted Mani the girl:
+https://drive.google.com/open?id=1MuWAUvlamxWKyvRiH4tVa-O6AFl1Wgl-
+- If you wanted Gabe the boy:
+https://drive.google.com/open?id=1EUJgYhYFXEit-Jzt58mgJ6QU-p8FCGyM
+
+Then find the download button at the top of the page, and Download the image to your Desktop.
+
+Then go to PixelPad > My Apps > T2. Find the green **+** next to the **Sprites** label. Find the sprite and call it **spr_player**
+
+And that's it! Some of you may have written some code to make the player show up on screen! If you did, fantastic! If not, not to worry, we'll tackle that next class.
+
+See you guys next week! Stay healthy and wash your hands!
+
 
 ## April 11, 2020
 
