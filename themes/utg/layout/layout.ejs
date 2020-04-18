@@ -20,7 +20,7 @@
 
       <ul class="mdl-list mdl-navigation">
         <span class="mdl-list__title">Classes</span>
-        <% site.pages.sort('name').each(function(page) { %> 
+        <% site.pages.sort('order').each(function(page) { %> 
           <% if (page.name){ %>
             <a href="<%- url_for(page.name)%>" class="nav-link <% if (is_current(page.name)) { %>active<% } %>">
               <li class="mdl-list__item mdl-navigation__link">
