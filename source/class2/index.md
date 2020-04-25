@@ -6,6 +6,42 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## April 25, 2020
+
+Hello! 
+Today in 'class' we imported some new sprites and got everything setup with them. 
+Here's a recap on how to do just that!
+
+First of all, make sure the sprites are in PixelPad:
+1. Here is the link for the sprites: [Google Drive Link](https://drive.google.com/drive/u/0/folders/1OQ_p9kSCS4SxKg_1W4oJnxC7ciopinx_)
+2. Download **Player1SS.jpg** and **Player2SS.jpg**
+3. Upload them to PixelPad. Call the sprites **sprs_player1** and **sprs_player2**.
+
+Now, we need to add some code to our objects! 
+The following code makes the object use the sprite sheet, and sets up 2 frames of the sprite sheet to use:
+
+{% code obj_player1 %}
+sprite_sheet = sprite_new('sprs_player1', 5, 6)
+# Sets up the player that looks to the left
+player_left = animation_new(sprite_sheet, 1, 18, 18)
+
+# Sets up the player that looks to the right
+player_right = animation_new(sprite_sheet, 1, 29, 29)
+
+animation_set(self, player_right)
+
+sprite_height = 3
+sprite_width = 3
+...
+{% endcode %}
+
+The same code goes in **obj_player2** except you change **sprs_player1** to **sprs_player2**.
+
+And that's all folks!
+Next week, we will set up some more frames, and make the two player objects start interacting!
+
+See you guys next week!
+
 ## April 18, 2020
 
 Hey guys!

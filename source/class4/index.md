@@ -6,6 +6,30 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## April 25, 2020
+
+Hello Jr. Coders!
+
+This week, we set up the code for displaying Mani (or Gabe) to the screen!
+
+Here is the code to do that!
+
+{% code game/start %}
+# Show the player to the screen
+player = object_new('obj_gabe')
+{% endcode %}
+
+Remember, this code shows the object to the screen. Right now, it's a blue box because we have not told PixelPad what image the Object should show.
+Let's do that now!
+
+{% code obj_gabe/start %}
+# Connect the sprite (spr_gabe) with the object (obj_gabe)
+sprite = sprite_new('spr_gabe')
+{% endcode %}
+
+And that's all we did today!
+Next class we will add some more sprites to our game so we can practice making them appear on the screen!
+
 ## April 18, 2020
 
 Hello my Jr. Coders!
@@ -24,7 +48,6 @@ Then go to PixelPad > My Apps > T2. Find the green **+** next to the **Sprites**
 And that's it! Some of you may have written some code to make the player show up on screen! If you did, fantastic! If not, not to worry, we'll tackle that next class.
 
 See you guys next week! Stay healthy and wash your hands!
-
 
 ## April 11, 2020
 

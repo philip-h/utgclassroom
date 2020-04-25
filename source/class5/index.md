@@ -6,6 +6,55 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## April 25, 2020
+
+Hey guys!
+So today, we concluded the code to ensure that our player cannot double jump.
+I will post the entire code for **GroundCheck.cs**. You can compare it to last week's post to see what was added this class.
+
+{% code GroundCheck.cs %}
+public class GroundCheck : MonoBehaviour
+{
+    // Start is called before the first frame update
+    private PlayerController player;
+    void Start()
+    {
+        player = GetComponentInParent<PlayerController>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    // This method will be triggered whenever we are currently collidiing with "collision"
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Check what we are colliding with!
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            player.onGround = true;
+        }
+    }
+
+    // This method will be triggered whenever we 'EXIT' any collision
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        // Check what we were colliding with
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            player.onGround = false;
+        }
+    }
+}
+{% endcode %}
+
+And that's all the code we wrote in this class!
+Next week, we will quickly implement the follow camera and continue with the Enemies.
+See you next week!
+
+
 ## April 18, 2020
 
 Hey guys!
@@ -208,7 +257,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(laser, transform.position, Quaternion.identity);
-        }
+        G}
 
         if (health <= 0)
         {

@@ -6,6 +6,16 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## April 25, 2020
+
+Hey guys! So today we continued on with our Clash Royale game. Here is what you were tasked to do:
+
+- Diyan and Kaushik: Complete the first part of Chapter Four (Pages 27 to 30). Diyan is writing his code in his robot sheet file and Kaushik is writing his code in his Dino sheet file.
+- Krish and Ansh: Complete the last part of Chapter Four (Pages 34 to 37) to implement spawning. Remember that your spawning code should go in your **dino base** file, not the **dino** file.
+- Sanjay: Continue fixing those typos! Look at the errors on your screen. If they say something like "Error ... cannot load 'spr_dinobase'" it's because you don't have dinobase. Find out what you named it!
+
+That's everything for this week! have a great week and we'll chat on Saturday! :)
+
 ## April 18, 2020
 
 Hey guys!
@@ -16,7 +26,7 @@ So today's class was all about all of us beginning to get caught up with eachoth
 As a recap of what you have to do for next week:
 
 - Diyan: When you press the **obj_robobutton** make an **obj_robot** spawn on the **obj_robobase**
-- Sanjay: Fix those typos! Make sure everything in the quotes matches what in your **Object Scripts** and **Sprites List** lists.
+- Sanjay: Fix those typos! Make sure everything in the quotes matches what in your **Object Scripts** and **Sprites** lists.
 - Krish & Ansh: Make your **obj_dino** go from the **obj_dinobase** to the bridge and then to the **obj_robobase**
 - Kaushik: Not sure, we'll talk next week!
 
@@ -325,8 +335,6 @@ healthbar.x = self.x
 
 healthbar.sprite_width = originalWidth * (health/maxHealth)
 {% endcode %}
-
-<!-- => -->
 
 {% code obj_healthbar/start %}
 # Enter the start code for obj_healthbar here.

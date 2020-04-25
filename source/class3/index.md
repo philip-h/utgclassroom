@@ -6,6 +6,64 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## April 25, 2020
+
+Hello.
+
+This week's class, we setup our enemy with some colliders and code.
+
+Here's a recap of what we did!
+
+First off, we found an enemy to appear on the screen and added some components to it!
+1. Find a Sprite of an enemy in the Assets. 
+2. Add a RigidBody2D to the GameObject
+3. Add a BoxCollier2D to the GameObject
+4. Edit the collider so the square covers the bottom part of the Enemy
+5. Add an EmptyGameObject to the GameObject 
+6. Add a BoxCollier2D to the new GameObject and call it PlayerCollider
+7. Edit the collider so the square covers the top part of the Enemy (The part where if the player touches it, the Enemy will be destroyed!)
+
+Then we created a new C# Script called **Enemy.cs** and dragged it onto our Enemy GameObject.
+
+Here is the code for that script!
+
+{% code Enemy.cs %}
+public class Enemy : MonoBehaviour
+{
+    public float speed = 0.8f;
+    public float leftMax, rightMax;
+    private float walkingDirection = 1f;
+    // The x where our enemy spawns
+    private float originalX;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        originalX = transform.position.x;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   // If we are walking right && our current position> our initial position + the farthest we can move right
+        if (walkingDirection > 0f && transform.position.x > originalX + rightMax)
+        {
+            // Then change direction to walk to the left
+            walkingDirection = -1f;
+        // If we are walking left        && our current position < our initial position - the farthest we can move left
+        } else if (walkingDirection < 0f && transform.position.x < originalX - leftMax)
+        {
+            // Change direction so we walk right
+            walkingDirection = 1f;
+        }
+
+        transform.Translate(speed * walkingDirection * Time.deltaTime, 0, 0);
+    }
+}
+{% endcode %}
+
+And that's all we did today!
+Next week, we'll add some more functionality to our enemies and create the Enemy - Player interactions!
+
 ## April 18, 2020
 
 Hey guys!
