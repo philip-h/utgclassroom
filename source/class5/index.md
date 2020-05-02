@@ -6,6 +6,47 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## May 2, 2020
+
+Hey guys!
+Today we implemented the FollowCam script, then spent the rest of class working on developing our scene a bit more!
+Here is the FollowCam script! 
+
+{% code FollowCam.cs %}
+// Imports ...
+public class FollowCam : MonoBehaviour
+{
+    public GameObject player;
+    public float followSpeed = 1f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector3 currentPlayerPosition = new Vector3(
+          player.transform.position.x,
+          0,
+          -10
+        )
+
+        transform.position = Vector3.Slerp(
+            transform.position, 
+            currentPlayerPosition,
+            Time.deltaTime * followSpeed);
+        
+    }
+}
+{% endcode %}
+
+And that's it! Next week we'll focus on creating Enemies and working on their interactions with the scene and our Player!
+
+See you all next week! :)
+
+
 ## April 25, 2020
 
 Hey guys!

@@ -6,6 +6,17 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## May 2, 2020
+
+Hey guys! 
+Here is what all of you were tasked to do this week on our Clash Royale game.
+- Diyan: Continue up to page 30. Remember that *game.bridge1.x* and the like do not exist in your code. You need real numbers!
+- Kaushik: Once you finish page 30, move on to assigning teams. Note that instead of using team names of "player" and "enemy", use "robot" and "dino"
+- Krish and Ansh: Finish collision detection!
+- Sanjay: Fix those typos. Be patient with yourself and try to really think about what you need the code to do!
+
+That everything for this week! I'll catch you gyus on Saturday!
+
 ## April 25, 2020
 
 Hey guys! So today we continued on with our Clash Royale game. Here is what you were tasked to do:

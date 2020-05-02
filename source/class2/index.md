@@ -6,6 +6,115 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## May 2, 2020
+
+Today we worked on finishing the animation setup, and modified the *obj_player1* and *obj_player2* loops to get us ready for next class.
+Here is all the code to setup the animation (Remember, the same code will be used for *obj_player2* but you have to change the name of the sprite!)
+
+{% code obj_player1/start %}
+# Enter the start code for obj_player1 here.
+sprite_sheet = sprite_new('sprs_player1', 5, 6)
+# Sets up the player that looks to the left
+player_left = animation_new(sprite_sheet, 1, 18, 18)
+
+# Sets up the player that looks to the right
+player_right = animation_new(sprite_sheet, 1, 29, 29)
+
+# Same as above, but for only one balloon (ob)
+player_ob_left = animation_new(sprite_sheet, 1, 21, 21)
+player_ob_right = animation_new(sprite_sheet, 1, 26, 26)
+
+
+animation_set(self, player_right)
+
+sprite_height = 3
+sprite_width = 3
+
+xVelocity = 0
+yVelocity = 0
+
+maxVelocity = 5
+gravityForce = 0.05
+frictionForce = 0.025
+{% endcode %}
+
+Now remember, we need to change some code in the loop so that we use our animations when moving our character:
+{% code obj_player1/loop %}
+# Controls the Player!
+if key_is_pressed('right'):
+  xVelocity = xVelocity + 0.1
+  *animation_set(self, player_right)*
+
+if key_is_pressed('left'):
+  xVelocity = xVelocity - 0.1
+  *animation_set(self, player_left)*
+...
+{% endcode %}
+
+Finally, we got our code ready for next class! All we did was remove anywhere we made reference to our enemy. Here is all the code for that! Remember, refrain from copy/pasting my code, but look at the differences between my code and yours and fix your errors!
+
+{% code obj_player1/loop %}
+# Enter the loop code for obj_player1 here.
+
+# Controls the Player!
+if key_is_pressed('right'):
+  xVelocity = xVelocity + 0.1
+  animation_set(self, player_right)
+
+if key_is_pressed('left'):
+  xVelocity = xVelocity - 0.1
+  animation_set(self, player_left)
+
+if key_is_pressed('up'):
+  self.y = self.y + 3
+  yVelocity = yVelocity + 3
+
+# Sets up gravity and acceleration
+if xVelocity > maxVelocity:
+  xVelocity = maxVelocity
+elif xVelocity < -maxVelocity:
+  xVelocity = -maxVelocity
+  
+if xVelocity > 0:
+  xvelocity = xVelocity - frictionForce
+elif xVelocity < 0:
+  xVelocity = xVelocity + frictionForce
+
+if xVelocity < frictionForce and xVelocity > -frictionForce:
+  xVelocity = 0
+
+if yVelocity > maxVelocity:
+  yVelocity = maxVelocity
+elif yVelocity < -maxVelocity:
+  yVelocity = -maxVelocity
+
+if yVelocity > 0:
+  yVelocity = yVelocity - gravityForce
+
+if yVelocity < gravityForce and yVelocity > -gravityForce:
+  yVelocity = 0
+
+self.x = self.x + xVelocity
+self.y = self.y + yVelocity
+
+
+# Handle all the collisoin detection
+if collision_check(self, 'obj_bubble'):
+  bubble = collision_check(self, 'obj_bubble')
+  destroy(bubble)
+  yVelocity = maxVelocity
+
+if collision_check(self, 'obj_wall'):
+  xVelocity = -xVelocity
+
+if collision_check(self, 'obj_ground'):
+  yVelocity = -yVelocity
+else:
+  yVelocity = yVelocity - gravityForce
+{% endcode %}
+
+That's everything for this week! Talk to you guys next week!
+
 ## April 25, 2020
 
 Hello! 

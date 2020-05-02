@@ -6,6 +6,100 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## May 2, 2020
+
+Hey guys!
+So this week, we gave our Player and Enemy the ability to look both directions when moving.
+The trick was to use the SpriteRenderer component and set the flipX property accordingly. 
+
+Here is the updated version of both the PlayerController and the EnemyController
+
+{% code PlayerController.cs %}
+// Imports... 
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 4f;
+    public float jumpForce = 5f;
+    public Rigidbody2D rb;
+    public bool onGround = false;
+    private SpriteRenderer renderer;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        renderer = GetComponent<SpriteRenderer>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            renderer.flipX = false;
+        }
+
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            renderer.flipX = true;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+}
+{% endcode %}
+
+{% code Enemy.cs %}
+// Imports...
+public class Enemy : MonoBehaviour
+{
+    public float speed = 0.8f;
+    public float leftMax, rightMax;
+    private float walkingDirection = 1f;
+    // The x where our enemy spawns
+    private float originalX;
+    private SpriteRenderer renderer;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        originalX = transform.position.x;
+        renderer = GetComponent<SpriteRenderer>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   // If we are walking right && our current position> our initial position + the farthest we can move right
+        if (walkingDirection > 0f && transform.position.x > originalX + rightMax)
+        {
+            // Then change direction to walk to the left
+            walkingDirection = -1f;
+            renderer.flipX = false;
+        // If we are walking left        && our current position < our initial position - the farthest we can move left
+        } else if (walkingDirection < 0f && transform.position.x < originalX - leftMax)
+        {
+            // Change direction so we walk right
+            walkingDirection = 1f;
+            renderer.flipX = true;
+        }
+
+        transform.Translate(speed * walkingDirection * Time.deltaTime, 0, 0);
+    }
+}
+
+{% endcode %}
+
+And that's all!
+Next week, we'll focus on the interaction between the slug and our player! That's my homework! ;)
+
+See you next week!
+
 ## April 25, 2020
 
 Hello.

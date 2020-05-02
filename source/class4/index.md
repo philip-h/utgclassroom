@@ -6,6 +6,34 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## May 2, 2020
+
+Hello Jr. Coders!
+
+This week wrote the code to make our player move up, down, left, and right.
+Here it is! 
+
+{% code obj_gabe(mani)/loog %}
+# Enter the loop code for obj_gabe here.
+
+if key_is_pressed('up'):
+  self.y = self.y + 3
+
+elif key_is_pressed('down'):
+  self.y = self.y - 3
+ 
+if key_is_pressed('left'):
+  self.x = self.x - 3
+
+elif key_is_pressed('right'):
+  self.x = self.x + 3
+
+{% endcode %}
+
+We'll talk more about this next week, as well as uploading some more sprites!
+Have a great week! :)
+
+
 ## April 25, 2020
 
 Hello Jr. Coders!
