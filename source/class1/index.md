@@ -15,7 +15,7 @@ Here is what all of you were tasked to do this week on our Clash Royale game.
 - Krish and Ansh: Finish collision detection!
 - Sanjay: Fix those typos. Be patient with yourself and try to really think about what you need the code to do!
 
-That everything for this week! I'll catch you gyus on Saturday!
+That everything for this week! I'll catch you guys on Saturday!
 
 ## April 25, 2020
 
