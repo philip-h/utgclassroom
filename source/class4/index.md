@@ -53,6 +53,8 @@ Let's do that now!
 {% code obj_gabe/start %}
 # Connect the sprite (spr_gabe) with the object (obj_gabe)
 sprite = sprite_new('spr_gabe')
+sprite_height = 2
+sprite_width = 2
 {% endcode %}
 
 And that's all we did today!
