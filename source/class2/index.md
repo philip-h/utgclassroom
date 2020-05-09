@@ -6,6 +6,26 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## May 9, 2020
+
+Today, we fixed a lot of the errors you guys had, then we started with the advanced collision detection. Here is the code for that:
+
+{% code obj_player1/loop %}
+...
+# Check if player1 actually collides with player2
+if collision_check(self, 'obj_player2'):
+  player2 = collision_check(self, 'obj_player2')
+  
+  print(self.x, self.y)
+  print(self.sprite_height)
+
+  destroy(player2)
+{% endcode %}
+
+And that's all we did this week. 
+Next time we will get this working.
+Enjoy your two week break and I'll see you on the 23rd! :)
+
 ## May 2, 2020
 
 Today we worked on finishing the animation setup, and modified the *obj_player1* and *obj_player2* loops to get us ready for next class.

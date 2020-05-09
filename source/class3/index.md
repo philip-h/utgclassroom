@@ -6,6 +6,43 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## May 9, 2020
+
+Today in class we added collision detection to the enemy from the player.
+This will be improved in our next class, but here's the working code we have right now:
+
+{% code PlayerCollider.cs %}
+// Imports... 
+public class PlayerController : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject)
+        }
+    }
+}
+{% endcode %}
+
+And that's all the code we wrote today!
+
+Next time we will work out the kinks with this code and really start making our game look proper!
+
+Have a great 2 weeks and I'll see you on the 23rd!
+
 ## May 2, 2020
 
 Hey guys!
@@ -244,11 +281,11 @@ public class GroundCheck : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+               
         if (collision.gameObject.CompareTag("Ground"))
         {
             player.onGround = true;
         }
-               
     }
 
     private void OnCollisionExit2D(Collision2D collision)

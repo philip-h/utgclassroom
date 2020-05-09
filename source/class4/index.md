@@ -6,6 +6,77 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## May 9, 2020
+
+Hey Jr. Coders!
+
+This week we practised importing sprites into our PixelPad setup!
+At the beginning of class I gave you a list of instructions to follow, here they are:
+
+### Insert Instructions Here!
+<figure>
+  <figcaption>May 9 Instructions</figcaption>
+  <pre><code spellcheck="false">
+1. Go to Google Drive Link!
+https://drive.google.com/drive/u/0/folders/1sWZVeARXDO9NVjrepka1iJ3tzBdmuKDx
+2. Download the files
+3. Save them to either your Desktop or Downloads folder
+4. Import them into pixel pad
+	call the tree spr_tree
+	call the bee spr_boss_bee
+	call the sensei spr_sensei
+5. Create objects for each sprite you imported. The name should be the same as 
+   the sprite. For example, the object for spr_tree sould be called obj_tree
+6. Connect the sprite to the object (check your obj_gabe/mani start code for a hint)
+7. Show the object to the screen (this will be in game)
+8. Find a cool background for your game and import it.
+Don't worry if it doesn't look good or doesn't fit, next
+class we will import a proper background!
+-------------------------------------------------
+IF YOU FINISH:
+
+In the Google Drive, you will see two other png files:
+mani-idle_run.png
+gabe-idle-run.png
+
+Choose one and download / import it to pixel pad.
+IMPORTANT
+call it sprs_gabe or sprs_mani (notice it is sprs not spr)
+
+Look at the documentation for
+animation_new
+animation_set
+
+See if you can make an animation show up on screen.
+This is only if you are finished. 
+I won't be helping with this part! If you get stuck, your determination 
+will get you through! Try everything!!!
+
+Worry not, this is something we will do together at a later date!
+  </code></pre>
+</figure>
+
+------
+
+For the code, let's say we are looking at sensei.png, here is what you would do.
+
+1. Download *sensei.png* from Googe Drive.
+2. Import *sensei.png* into PixelPad using thee green + next to the Sprites label. Call it *spr_sensei*.
+3. Create a new object called *obj_sensei*.
+4. Add the following code to *obj_sensei*
+{% code obj_sensei/start %}
+sprite = sprite_new('spr_sensei')
+{% endcode %}
+5. Add the following code to *game*
+{% code game/start %}
+...
+sensei = object_new('obj_sensei')
+{% endcode %}
+
+And that's all for this class!
+Next class we will find a great background and start with the interactions of the player with his environment!
+Have a great vacation and I'll see you on the 23rd!
+
 ## May 2, 2020
 
 Hello Jr. Coders!

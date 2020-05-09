@@ -6,6 +6,17 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## May 9, 2020
+
+Hey guys!
+
+This week, I struggled to find out why Ishan's player kept falling through the ground!
+Stay tuned for updates.
+
+For now, just work on Chapter 6 from the work book.
+
+Have a great vacation and I'll see you guys on the 23rd! :)
+
 ## May 2, 2020
 
 Hey guys!

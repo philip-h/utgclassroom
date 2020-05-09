@@ -6,6 +6,17 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## May 9, 2020
+
+Hey guys!
+Here is what we were tasked to do in class!
+- Diyan and Kaushik: Your robot needs to be able to choose a bridge
+- Krish: Work on collisions between robots and dinos
+- Ansh: Work on collisions between units and bases
+- Sanjay: Same old! Use Chapter 5/6 for help!
+
+Have a great 2 week break and I'll see you on the 23rd
+
 ## May 2, 2020
 
 Hey guys! 
