@@ -347,7 +347,7 @@ if collision_check_all(self, 'base'):
       base.health = base.health - 5
 
 # If we are out of health, we die!
-if health <= 0:
+if health < 0:
   destroy(healthbar)
   destroy(self)
   
