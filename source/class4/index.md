@@ -6,6 +6,87 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## May 23, 3030
+
+Hey Jr. Coders!
+This week, we added a background to our game, added cherries, and learned how to pick them up!
+
+Here is the folder of assets we've been working with: [PY101 Google Drive](https://drive.google.com/open?id=1sWZVeARXDO9NVjrepka1iJ3tzBdmuKDx)
+The first thing we did was add the background and cherries to PixelPad (Don't remember how? Look at last class' instructions.) calling them **spr_background** and **spr_cherries**
+
+Then we created the object for the new sprites: **obj_background** and **obj_cherries**
+{% code obj_background %}
+sprite = sprite_new('spr_background')
+{% endcode %}
+
+{% code obj_cherries %}
+sprite = sprite_new('spr_cherries')
+{% endcode %}
+
+Then we had to make them appear on the screen.
+Here I will include my entire game script for reference, but we're focused only on the background and cherries lines.
+
+{% code game/start %}
+# Enter the start code for your game here.
+
+# Background must go first!!
+background = object_new('obj_background')
+
+# Show player to the screen
+player = object_new('obj_gabe')
+
+# Show cherry to the screen
+cherry = object_new('obj_cherries')
+cherry.y = -150
+
+cherry2 = object_new('obj_cherries')
+cherry2.x = 100
+
+cherry3 = object_new('obj_cherries')
+cherry3.x = 100
+cherry3.y = 150
+{% endcode %}
+
+Then, we added code to pick up the cherries.
+First, in our gabe/mani script, we need a variable to track the number of cherries we have.
+Once again, here is the full start script for reference:
+
+{% code obj_mani(gabe)/start %}
+# Enter the start code for obj_gabe here.
+sprite = sprite_new('spr_gabe')
+
+sprite_height = 2
+sprite_width = 2
+
+# Inventory
+cherryCount = 0
+{% endcode %}
+
+Then, in the loop, we need to add code to check whether or not we actually collide with cherries. Lucky for us, PixelPad has a **collision_check()** function.
+
+{% code obj_gabe(mani) / loop %}
+# Movement Code ...
+
+cherry = collision_check(self, "obj_cherries")
+if cherry:
+  cherryCount = cherryCount + 1
+  print("You've collected a cherry. You have", cherryCount, "cherries")
+  object_destroy(cherry)
+{% endcode %}
+
+And that's it! Now we can pick up cherries.
+
+Next week we'll wrap up our game :)
+
+Take care and see you in 7 days
+
+
+
+
+
+
+
+
 ## May 9, 2020
 
 Hey Jr. Coders!

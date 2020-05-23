@@ -6,6 +6,18 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## May 23, 2020
+
+Hey! Classes are almost over, can you believe it?
+Here is what you guys were working on this week.
+
+Ansh and Krish, you guys finished with the collision of the bases, next make victory screens for which ever base gets destroyed first!
+Diyan and Kaushik: Making the robots go from the base to the bridge, then to the enemy base
+Sanjay: Look though chapter 5 and make sure you follow along!
+
+
+Have a great week, see you on the 30th!
+
 ## May 9, 2020
 
 Hey guys!

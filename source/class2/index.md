@@ -6,6 +6,130 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## May 23, 2020
+
+Hey!
+Today we did the collision check for the two players!
+
+I will post the code for just **obj_player1** and tell you what you have to change for **obj_player2**.
+
+{% code obj_player1/start %}
+# Enter the start code for obj_player1 here.
+sprite_sheet = sprite_new('sprs_player1', 5, 6)
+# Sets up the player that looks to the left
+player_left = animation_new(sprite_sheet, 1, 18, 18)
+
+# Sets up the player that looks to the right
+player_right = animation_new(sprite_sheet, 1, 29, 29)
+
+# Same as above, but for only one balloon (ob)
+player_ob_left = animation_new(sprite_sheet, 1, 21, 21)
+player_ob_right = animation_new(sprite_sheet, 1, 26, 26)
+
+health = 2
+
+animation_set(self, player_right)
+
+sprite_height = 3
+sprite_width = 3
+
+xVelocity = 0
+yVelocity = 0
+
+maxVelocity = 5
+gravityForce = 0.05
+frictionForce = 0.025
+{% endcode %}
+
+Make sure you have the player_ob_left/right lines too!
+For Player2, all that changes here is the name of the sprite sheet.
+
+{% code obj_player1/loop %}
+# Enter the loop code for obj_player1 here.
+
+# Controls the Player!
+if key_is_pressed('right'):
+  xVelocity = xVelocity + 0.1
+  animation_set(self, player_right)
+  
+if key_is_pressed('left'):
+  xVelocity = xVelocity - 0.1
+  animation_set(self, player_left)
+  
+if key_is_pressed('up'):
+  self.y = self.y + 3
+  yVelocity = yVelocity + 3
+
+# Sets up gravity and acceleration
+if xVelocity > maxVelocity:
+  xVelocity = maxVelocity
+elif xVelocity < -maxVelocity:
+  xVelocity = -maxVelocity
+  
+if xVelocity > 0:
+  xvelocity = xVelocity - frictionForce
+elif xVelocity < 0:
+  xVelocity = xVelocity + frictionForce
+
+if xVelocity < frictionForce and xVelocity > -frictionForce:
+  xVelocity = 0
+
+if yVelocity > maxVelocity:
+  yVelocity = maxVelocity
+elif yVelocity < -maxVelocity:
+  yVelocity = -maxVelocity
+
+if yVelocity > 0:
+  yVelocity = yVelocity - gravityForce
+
+if yVelocity < gravityForce and yVelocity > -gravityForce:
+  yVelocity = 0
+
+self.x = self.x + xVelocity
+self.y = self.y + yVelocity
+
+
+# Handle all the collisoin detection
+if collision_check(self, 'obj_bubble'):
+  bubble = collision_check(self, 'obj_bubble')
+  destroy(bubble)
+  yVelocity = maxVelocity
+
+if collision_check(self, 'obj_wall'):
+  xVelocity = -xVelocity
+
+if collision_check(self, 'obj_ground'):
+  yVelocity = -yVelocity
+else:
+  yVelocity = yVelocity - gravityForce
+
+
+
+# Check if player1 actually collides with player2
+if collision_check(self, 'obj_player2'):
+  player2 = collision_check(self, 'obj_player2')
+
+  # And player 1 is on top of player2
+  if (self.y > player2.y):
+    player2.health = player2.health - 1
+    animation_set(player2, player2.player_ob_left)
+    
+    yVelocity = maxVelocity
+ 
+ 
+if health < 0:
+  destroy(self) 
+{% endcode %}
+
+What we added today is the bottom if statements
+Make sure when moving it to **obj_player2** that you change all the player2 to player1s.
+
+Next week we'll keep the direction our player is moving consistent!
+
+That's all folks, see you in 7 days! :)
+
+
+
 ## May 9, 2020
 
 Today, we fixed a lot of the errors you guys had, then we started with the advanced collision detection. Here is the code for that:

@@ -6,6 +6,67 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## May 23, 2020
+
+Heyyo!
+
+This week, we added an enemy to our game that moved, and we learned something important!
+**Make sure that you change the Layer at the top to either Player, Platform, or Enemy**
+
+Here's the code for the EnemyController that we worked on today!
+
+{% code EnemyController.cs %}
+// Imports...
+
+public class EnemyController : MonoBehaviour
+{
+
+    public float speed = 2f;
+    public float leftMax = 5f;
+    public float rightMax = 5f;
+    private float walkingDirection = 1f;
+    private float originalX;
+
+    private SpriteRenderer spriteRenderer;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        originalX = transform.position.x;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // if i'm walking right    and my current position is to the right of the farthest right i'm allowed to walk
+        if (walkingDirection > 0.0f && transform.position.x > originalX + rightMax)
+        {
+            // Change directions
+            walkingDirection = -1f;
+            spriteRenderer.flipX = true;
+        }
+
+        // if I'm walking left     and my current position is to the left of the farthest i'm allowed to walk
+        if (walkingDirection < 0.0f && transform.position.x < originalX - leftMax)
+        {
+            // change directions
+            walkingDirection = 1f;
+            spriteRenderer.flipX = false;
+        }
+
+        transform.Translate(speed * walkingDirection * Time.deltaTime, 0, 0);
+    }
+}
+{% endcode %}
+
+And that's all!
+
+Next week we work on animations and finishing up with collision detection!
+
+See you guys soon!
+
+
 ## May 9, 2020
 
 Hey guys!

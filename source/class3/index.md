@@ -6,6 +6,85 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## May 23, 2020
+
+Hey GameDevs!
+Today we finished the collision with the enemy and the player, and did the code for the HUD.
+
+For the collision with the player, make sure that **all** box colliders do not have **isTrigger** checked.
+
+Now, here is the PlayerCollider.cs script which is attached to the PlayerCollider GameObject under the Player GameObject.
+
+{% code PlayerCollider.cs %}
+// Imports...
+
+public class PlayerCollider : MonoBehaviour
+{
+    private GameObject enemy;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        enemy = transform.parent.gameObject;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(enemy);
+        }
+    }
+
+}
+{% endcode %}
+
+Then we implemented the HUD in Chapter 7. Attach the HUD Manager script to the Canvas GameObject created by our TextUI.
+
+{% code HUDManager.cs %}
+// Imports...
+
+public class HUDManager : MonoBehaviour
+{
+    public int lives = 3;
+    public Text livesText;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        livesText.text = "Lives: " + lives; // "Lives: 3"
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void LoseLife()
+    {
+        // lives -= 1;
+        lives = lives - 1;
+        livesText.text = "Lives: " + lives;
+    }
+}
+
+{% endcode %}
+
+And that's all we did!
+
+Next week we will work on animations and add more enemies.
+
+See you next week
+
+
+
 ## May 9, 2020
 
 Today in class we added collision detection to the enemy from the player.
