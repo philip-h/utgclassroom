@@ -6,6 +6,17 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:30
 ---
 
+## May 30, 2020
+
+Hey guys!
+So today we started to do the animations, and there was an issue with it, the issue was pretty stupid haha, but oh well.
+
+What I'll do is leave a link to a video that shows how to setup animations, and we'll finish up next class!
+
+[2D Animation in Unity (Tutorial)](https://www.youtube.com/watch?v=hkaysu1Z-N8&t=655s)
+
+Have a great week and I'll see you guys for our LAST CLASS OF THE YEAR!
+
 ## May 23, 2020
 
 Hey GameDevs!

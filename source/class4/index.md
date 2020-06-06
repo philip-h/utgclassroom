@@ -6,7 +6,27 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
-## May 23, 3030
+## May 24, 2020
+
+Hey Jr. Coders!
+This week, we added collision detection for our boss bee, and fixed errors we were having.
+
+Here is the code for that!
+{% code obj_mani/gabe/loop %}
+...
+boss_bee = collision_check(self, "obj_boss_bee")
+if boss_bee:
+  print("Oh no! You have died at the hands of the big boss bee")
+  object_destroy(self)
+{% endcode %}
+
+All you have to do is import the bee to your PixelPad and add it to the game. (Refer to [May 9, 2020](#May-9-2020) for help with that!)
+
+And that's it!
+
+Can't believe it's almost over. Have a happy and healthy week and I'll see you next week for the LAST CLASS OF THE YEAR!
+
+## May 23, 2020
 
 Hey Jr. Coders!
 This week, we added a background to our game, added cherries, and learned how to pick them up!

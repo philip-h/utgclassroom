@@ -6,6 +6,17 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## May 30, 2020
+
+Hey guys!
+Here is the current progress of the 5 of you!
+
+- Krish and Ansh: Basically done, just working on the extra stuff (background and lesson 7)
+- Diyan and Kaushik: Players need to go to enemy base, then start on the spawning!
+- Sanjay: Collision between the players and enemies, then collision with the bases!
+
+Wow that's it! Hope you guys have a great week, and I'll see you guys next week for our LAST CLASS OF THE YEAR!
+
 ## May 23, 2020
 
 Hey! Classes are almost over, can you believe it?

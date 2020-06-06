@@ -6,6 +6,178 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## May 30, 2020
+
+Hey guys!
+Today we 
+1. made the direction our players face consistent
+2. made the fact that a player could have one balloon persistant
+3. we added the bubble spawner.
+
+
+Let's see how to do those things! 
+
+1. Direction
+  a. We added a variable in the start of both players called **direction** and set that equal to 'right'
+  b. We added code in the loop of **obj_player1/2** for when we press the arrow keys to update the value of **direction**
+  c. Then we used this variable in the collision detection. If the direction was right, change the animation to player_ob_right, and if left, player_ob_left.
+
+2. One balloon persistant
+  a. Simply added an if statement to the arrow key if statements that checks the player's health to see which animation to set. 
+
+3. Bubble Spawner
+  a. Add the object new code for the spawner to our room script!
+
+So, there's all the instructions, here is the completed code now for the **obj_player1** and the code in the game script! See if you can match the instructions with the code!
+
+{% code obj_player1/start %}
+# Enter the start code for obj_player1 here.
+sprite_sheet = sprite_new('sprs_player1', 5, 6)
+# Sets up the player that looks to the left
+player_left = animation_new(sprite_sheet, 1, 18, 18)
+
+# Sets up the player that looks to the right
+player_right = animation_new(sprite_sheet, 1, 29, 29)
+
+# Same as above, but for only one balloon (ob)
+player_ob_left = animation_new(sprite_sheet, 1, 21, 21)
+player_ob_right = animation_new(sprite_sheet, 1, 26, 26)
+
+health = 2
+
+animation_set(self, player_right)
+
+sprite_height = 3
+sprite_width = 3
+
+xVelocity = 0
+yVelocity = 0
+
+maxVelocity = 5
+gravityForce = 0.05
+frictionForce = 0.025
+
+direction = 'right'
+{% endcode %}
+
+{% code obj_player1/loop %}
+# Enter the loop code for obj_player1 here.
+
+# Controls the Player!
+if key_is_pressed('right'):
+  xVelocity = xVelocity + 0.1
+  
+  if health == 2:
+    animation_set(self, player_right)
+  elif health == 1:
+    animation_set(self, player_ob_right)
+  
+  direction = 'right'
+  
+  
+if key_is_pressed('left'):
+  xVelocity = xVelocity - 0.1
+  
+  if health == 2:
+    animation_set(self, player_left)
+  elif health == 1:
+    animation_set(self, player_ob_left)
+  
+  direction = 'left'
+  
+if key_is_pressed('up'):
+  self.y = self.y + 3
+  yVelocity = yVelocity + 3
+
+# Sets up gravity and acceleration
+if xVelocity > maxVelocity:
+  xVelocity = maxVelocity
+elif xVelocity < -maxVelocity:
+  xVelocity = -maxVelocity
+  
+if xVelocity > 0:
+  xvelocity = xVelocity - frictionForce
+elif xVelocity < 0:
+  xVelocity = xVelocity + frictionForce
+
+if xVelocity < frictionForce and xVelocity > -frictionForce:
+  xVelocity = 0
+  
+if yVelocity > maxVelocity:
+  yVelocity = maxVelocity
+elif yVelocity < -maxVelocity:
+  yVelocity = -maxVelocity
+
+if yVelocity > 0:
+  yVelocity = yVelocity - gravityForce
+
+if yVelocity < gravityForce and yVelocity > -gravityForce:
+  yVelocity = 0
+
+self.x = self.x + xVelocity
+self.y = self.y + yVelocity
+
+
+# Handle all the collisoin detection
+if collision_check(self, 'obj_bubble'):
+  bubble = collision_check(self, 'obj_bubble')
+  destroy(bubble)
+  yVelocity = maxVelocity
+  
+if collision_check(self, 'obj_wall'):
+  xVelocity = -xVelocity
+  
+if collision_check(self, 'obj_ground'):
+  yVelocity = -yVelocity
+else:
+  yVelocity = yVelocity - gravityForce
+  
+  
+
+# Check if player1 actually collides with player2
+if collision_check(self, 'obj_player2'):
+  player2 = collision_check(self, 'obj_player2')
+  
+  # And player 1 is on top of player2
+  if (self.y > player2.y):
+    player2.health = player2.health - 1
+    
+    if player2.direction == 'right':
+      animation_set(player2, player2.player_ob_right)
+    elif player2.direction == 'left':
+      animation_set(player2, player2.player_ob_left)
+    
+    yVelocity = maxVelocity
+    
+    
+if health < 0:
+  destroy(self)
+{% endcode %}
+
+And finally, the rm_level2 script!
+
+{% code rm_level2/start %}
+# Enter the start code for rm_level2 here.
+
+background = object_new('obj_background')
+
+ground = object_new('obj_ground')
+ground.y = -200
+
+player1 = object_new('obj_player1')
+
+player2 = object_new('obj_player2')
+player2.x = 100
+
+bubble_spawner = object_new('obj_bubble_spawner')
+{% endcode %}
+
+And that's all!
+
+See you guys next week for our FINAL CLASS OF THE YEAR!
+
+Stay happy and healthy :)
+
 ## May 23, 2020
 
 Hey!

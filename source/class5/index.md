@@ -6,6 +6,19 @@ icon: fab fa-steam
 date: 2019-09-13 16:27:40
 ---
 
+## May 30, 2020
+
+Hey guys!
+Today we did some animations! We'll have to fix them next week, but it was a good start.
+
+What I'll do is leave a link to a video that shows how to setup animations, and we'll finish up next class!
+
+[2D Animation in Unity (Tutorial)](https://www.youtube.com/watch?v=hkaysu1Z-N8&t=655s)
+
+Also, at your own time, complete Chapter 7 in the book.There's only one typo on the second page (lifeText should be livesText) and everything else is self-explanatory!
+
+Have a great week and I'll see you guys for our LAST CLASS OF THE YEAR!
+
 ## May 23, 2020
 
 Heyyo!
