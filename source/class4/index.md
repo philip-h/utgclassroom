@@ -6,6 +6,28 @@ icon: fas fa-rocket
 date: 2019-09-13 16:27:34
 ---
 
+## June 6, 2020
+
+WOW! Last day of class, wooooh!
+It's been a great year!
+
+The only code we added today was code to make the bee disappear when we collect all the berries:
+
+{% code game/loop %}
+if player.cherryCount >= 3:
+  print("Contgratz, you passed the level!")
+  object_destroy(boss_bee)
+  player.cherryCount = -1
+{% endcode %}
+
+And that's it!
+
+Take care and have a great life, and stay safe and healthy!
+
+Much respect,
+Mr. Philip Habib :)
+
+
 ## May 24, 2020
 
 Hey Jr. Coders!

@@ -6,6 +6,16 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## June 6, 2020
+
+WOW! Last day of class, wooooh!
+It's been a great year, and I do encourage you guys to finish of that last lesson!
+
+Take care and have a great life, and stay safe and healthy!
+
+Much respect,
+Mr. Philip Habib :)
+
 ## May 30, 2020
 
 Hey guys!

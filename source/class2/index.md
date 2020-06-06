@@ -6,6 +6,16 @@ icon: fas fa-gamepad
 date: 2019-09-13 16:27:26
 ---
 
+## June 6, 2020
+
+WOW! Last day of class, wooooh!
+It's been a great year!
+
+Take care and have a great life, and stay safe and healthy!
+
+Much respect,
+Mr. Philip Habib :)
+
 ## May 30, 2020
 
 Hey guys!
