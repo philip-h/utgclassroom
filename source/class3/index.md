@@ -28,3 +28,15 @@ That's it!
 Tomorrow we will make more assets and put them in Unity!
 
 Have a great day and see you tomorrow!
+
+## July 8, 2020
+
+Hey guys, so today, we simply continued creating assets for our FishMaze game.
+
+Here is what we have to create by the end of tomorrow's class:
+- A Background (underwater)
+- 3 different "enemies" that our main character must avoid (could be a hook, enemy fish or shark, human, bomb, or literally anything you can think of)
+- Some way to know the player has reached the end of the level
+(Could be a sign, maybe a cave, completely up to you)
+
+So far, all of your Sprites are looking great! Keep up the great work and I'll see you guys tomorrow!
