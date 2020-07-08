@@ -1,5 +1,6 @@
 ---
 title: UTG Classroom
+order: 10
 ---
 
 # Welcome to Coding Class!
