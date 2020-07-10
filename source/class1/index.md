@@ -6,40 +6,38 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
-## July 6, 2020
+## July 10, 2020
 
-Welcome to our first-ever all-virtual Reidmount class! Today was just an introduction to the course, and some introductions to each other.
+Hey guys! So today we learned how to get our fish to move on the screen.
+First thing's first, we need to make sure our fish appears on the screen.This is the code to do that
 
-## July 7, 2020
+{% code Game/START %}
+#  ...
+self.fish = Fish()
+self.fish.sprite = sprite_new('fish.png')
+{% endcode %}
 
-Hey guys! So today, we learned how to create our own assets (a fish sprite) and upload it to PixelPad.
+Notice the **self.** at the beginning of fish, that's important. Without it, we won't be able to move our fish in the **Loop** code.
 
-### How to access Photopea
-The website we used to create our masterpiece is [Photopea](https://www.photopea.com/). We pressed on **New Project** and made sure the width and the height were **64px**. Then we pressed the "Create" button.
+Now, here is the code we wrote to move the fish whenever we press w, a, s, or d.
 
-Once we finished our drawing, we went to File > Export As > PNG and pressed the "Save" button.
+{% code Game/LOOP %}
+if key_is_pressed('w'):
+  self.fish.y = self.fish.y + 1
 
-### How to upload to PixelPad
-Now, login to [PixelPad](http://pixelpad.io) and click on **My Apps**. Click on the game we created in class (FishMaze).
+if key_is_pressed('a'):
+  self.fish.x = self.fish.x - 1
 
-Now on the left side you will see categories (Classes, Rooms, Sprites...) Next to the **Sprites** label there is a **+**, click on that and press **Upload Assets**. Now find your fish picture that you saved before. A popup should appear at the top to ask what you want to name your texture: name it **fish**.
+if key_is_pressed('s'):
+  self.fish.y = self.fish.y - 1
 
-That's it!
-Tomorrow we will make more assets and upload them to PixelPad!
+if key_is_pressed('d'):
+  self.fish.x = self.fish.x + 1
+{% endcode %}
 
-Have a great day and see you tomorrow!
+And that's it! 
 
-## July 8, 2020
-
-Hey guys, so today, we simply continued creating assets for our FishMaze game.
-
-Here is what we have to create by the end of tomorrow's class:
-- A Background (underwater)
-- 3 different "enemies" that our main character must avoid (could be a hook, enemy fish or shark, human, bomb, or literally anything you can think of)
-- Some way to know the player has reached the end of the level
-(Could be a sign, maybe a cave, completely up to you)
-
-So far, all of your Sprites are looking great! Keep up the great work and I'll see you guys tomorrow!
+Have a great weekend. Next week we will get our "enemies" on the screen and moving!
 
 ## July 9, 2020
 
@@ -63,6 +61,41 @@ Some things to note:
 2. Be patient with yourselves. It looks like gibberish now, but soon you will understand everything the above code does.
 
 Have a great day and I'll see you guys tomorrow!
+
+## July 8, 2020
+
+Hey guys, so today, we simply continued creating assets for our FishMaze game.
+
+Here is what we have to create by the end of tomorrow's class:
+- A Background (underwater)
+- 3 different "enemies" that our main character must avoid (could be a hook, enemy fish or shark, human, bomb, or literally anything you can think of)
+- Some way to know the player has reached the end of the level
+(Could be a sign, maybe a cave, completely up to you)
+
+So far, all of your Sprites are looking great! Keep up the great work and I'll see you guys tomorrow!
+
+## July 7, 2020
+
+Hey guys! So today, we learned how to create our own assets (a fish sprite) and upload it to PixelPad.
+
+### How to access Photopea
+The website we used to create our masterpiece is [Photopea](https://www.photopea.com/). We pressed on **New Project** and made sure the width and the height were **64px**. Then we pressed the "Create" button.
+
+Once we finished our drawing, we went to File > Export As > PNG and pressed the "Save" button.
+
+### How to upload to PixelPad
+Now, login to [PixelPad](http://pixelpad.io) and click on **My Apps**. Click on the game we created in class (FishMaze).
+
+Now on the left side you will see categories (Classes, Rooms, Sprites...) Next to the **Sprites** label there is a **+**, click on that and press **Upload Assets**. Now find your fish picture that you saved before. A popup should appear at the top to ask what you want to name your texture: name it **fish**.
+
+That's it!
+Tomorrow we will make more assets and upload them to PixelPad!
+
+Have a great day and see you tomorrow!
+
+## July 6, 2020
+
+Welcome to our first-ever all-virtual Reidmount class! Today was just an introduction to the course, and some introductions to each other.
 
 
 
