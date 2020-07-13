@@ -6,12 +6,73 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 13, 2020
+
+Hey guys! Today we learned about two important things:
+1. We can re-use the same picture multiple times in games
+2. We can move Game Objects around using the **.x** and **.y** "attributes"
+
+Our only goal today was to add enemies to our game and space them out, here is the example of the code that I did, yours may be different and that **is totally okay!**.
+
+{% code Game/Start %}
+# ...
+# Creates the fish object
+self.fish = Fish()
+# 'Binds' the picture to the fish object
+self.fish.sprite = sprite_new('fish.png')
+# Moves the fish 250px to the left!
+self.fish.x = -250
+
+# Creates a new hook and moves it to the position (100, 200)
+self.hook = Enemy1()
+self.hook.sprite = sprite_new('enemy1.png')
+self.hook.x = 100
+self.hook.y = 200
+
+self.hook1 = Enemy1()
+self.hook1.sprite = sprite_new('enemy1.png')
+self.hook1.x = -100
+self.hook1.y = 50
+
+self.hook2 = Enemy1()
+self.hook2.sprite = sprite_new('enemy1.png')
+self.hook2.x = 97
+self.hook2.y = -78
+
+self.bomb = Enemy2()
+self.bomb.sprite = sprite_new('enemy2.png')
+self.bomb.x = -100
+self.bomb.y = -100
+
+self.bomb1 = Enemy2()
+self.bomb1.sprite = sprite_new('enemy2.png')
+self.bomb1.x = 200
+self.bomb1.y = 200
+
+self.poison = Enemy3()
+self.poison.sprite = sprite_new('enemy3.png')
+self.poison.x = -200
+self.poison.y = 150
+
+self.poison1 = Enemy3()
+self.poison1.sprite = sprite_new('enemy3.png')
+self.poison1.x = 100
+self.poison1.y = 75
+{% endcode %}
+
+The last thing we talked about were comments (the # symbol)
+Comments in programming are a way to communicate with other programmers (usually yourself) what the code actually does. It's meant to be written in a language that even non-programmers understand (so English for most of us).
+
+As I mentioned in class, comments won't be looked at for this game, but will be looked at in future games, so get used to them!
+
+Have a great day, and I'll see you guys tomorrow :) 
+
 ## July 10, 2020
 
 Hey guys! So today we learned how to get our fish to move on the screen.
 First thing's first, we need to make sure our fish appears on the screen.This is the code to do that
 
-{% code Game/START %}
+{% code Game/Start %}
 #  ...
 self.fish = Fish()
 self.fish.sprite = sprite_new('fish.png')
@@ -21,7 +82,7 @@ Notice the **self.** at the beginning of fish, that's important. Without it, we 
 
 Now, here is the code we wrote to move the fish whenever we press w, a, s, or d.
 
-{% code Game/LOOP %}
+{% code Game/Loop %}
 if key_is_pressed('w'):
   self.fish.y = self.fish.y + 1
 
@@ -49,7 +110,7 @@ Our goal will be to get the **background** to appear on the game screen!
 
 The first thing we need to do is create a new Class, and we will call it **Background** (Note: the capital B). Now, click back on our Game Class, and we will write the following code
 
-{% code Game/START %}
+{% code Game/Start %}
 background = Background()
 background.sprite = sprite_new('background.png')
 {% endcode %}

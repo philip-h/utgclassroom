@@ -6,6 +6,43 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 11, 2020
+
+Hey guys, so today we got everyone set up properly with Unity.
+
+Once that was done, we created a new Folder in our **Assets** folder called **Scripts** and inside created a new **C#** script called **FishController**.
+
+Inside that file, we added some code.
+I'll put the code for the entire file so you can see what it all looks like together!
+
+{% code FishController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FishController : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        // The code would go here if I say put the code in the Start function
+    }
+
+    // Update is called once per frame1
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector2.up * Time.deltaTime);
+        }
+    }
+}
+{% endcode %}
+
+And that's it! This will make our fish move up when we press the "W" key, but it won't work yet! That's what we will work on tomorrow!!
+
+See you guys then :) 
+
 ## July 10, 2020
 
 Today, we had a new student, Laura, join us. Since we had to get her all setup with Unity and Visual Studio, we took it easy, learned nothing new, and played some Kahoot!

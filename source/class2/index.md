@@ -6,6 +6,63 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 13, 2020
+
+Hey guys! Today we learned about two important things:
+1. We can re-use the same picture multiple times in games
+2. We can move Game Objects around using the **.x** and **.y** "attributes"
+
+Our only goal today was to add enemies to our game and space them out, here is the example of the code that I did, yours may be different and that **is totally okay!**.
+
+{% code Game/Start %}
+# ...
+# Creates the fish Game Object
+self.fish = Fish()
+# 'Binds' the picture to the game object
+self.fish.sprite = sprite_new('fish.png')
+# Moves the game object 230px to the left!
+self.fish.x = -230
+
+self.hook = Enemy1()
+self.hook.sprite = sprite_new('enemy1.png')
+self.hook.x = 100
+self.hook.y = 100
+
+self.hook2 = Enemy1()
+self.hook2.sprite = sprite_new('enemy1.png')
+self.hook2.x = -110
+self.hook2.y = 179
+
+self.bomb = Enemy2()
+self.bomb.sprite = sprite_new('enemy2.png')
+self.bomb.x = -50
+self.bomb.y = -100
+
+self.bomb1 = Enemy2()
+self.bomb1.sprite = sprite_new('enemy2.png')
+self.bomb1.x = 150
+
+self.poison = Enemy3()
+self.poison.sprite = sprite_new('enemy3.png')
+self.poison.x = 100
+self.poison.y = -150
+
+self.poison2 = Enemy3()
+self.poison2.sprite = sprite_new('enemy3.png')
+self.poison2.x = -200
+self.poison2.y = 150
+
+self.poison3 = Enemy3()
+self.poison3.sprite = sprite_new('enemy3.png')
+{% endcode %}
+
+The last thing we talked about were comments (the # symbol)
+Comments in programming are a way to communicate with other programmers (usually yourself) what the code actually does. It's meant to be written in a language that even non-programmers understand (so English for most of us).
+
+As I mentioned in class, comments won't be looked at for this game, but will be looked at in future games, so get used to them!
+
+Have a great day, and I'll see you guys tomorrow :) 
+
 ## July 10, 2020
 
 Hey guys! So today we learned how to get our fish to move on the screen.
