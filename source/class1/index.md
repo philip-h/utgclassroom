@@ -6,6 +6,43 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 14, 2020
+
+Today we talked about collision detection!! Woot Woot!
+Collision detection can be broken down into two steps:
+1. Check to see if we actually colllided with something
+2. If we did collide with something, do something as a result!
+
+In class, we saw how to check if our **fish** collided with all of our enemies, and here is the code for that!
+
+{% code Game/Loop %}
+# Check for collisions
+# 1. Actually check to see if there is a collision
+# 2. If there was a collision, do something!
+
+hook = collision_check(self.fish, "Enemy1")
+if hook:
+    destroy(self.fish)
+
+bomb = collision_check(self.fish, "Enemy2")
+if bomb:
+    destroy(self.fish)
+
+poison = collision_check(self.fish, "Enemy3")
+if poison:
+    destroy(self.fish)
+
+sign = collision_check(self.fish, "End")
+if sign:
+    print("You won!")
+{% endcode %}
+
+Notice how on the last collision (with the sign) instead of destroying the fish, we just printed out a victory message for the user! If we win the game, we probably don't want our player to die :)
+
+Tomorrow we will finish off collision detection and tackle what happens when we actually win the game.
+
+See you guys tomorrow!
+
 ## July 13, 2020
 
 Hey guys! Today we learned about two important things:

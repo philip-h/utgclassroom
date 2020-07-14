@@ -6,7 +6,67 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
-## July 11, 2020
+## July 14, 2020
+
+Hey guys and gals!
+Today we got our fish moving around on the screen.
+The first thing we did was finish our **FishController.cs** script to include all the directions.
+It now looks like this!
+
+{% code FishController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FishController : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        // The code would go here if I say put the code in the Start function
+    }
+
+    // Update is called once per frame1
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector2.up * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector2.left * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector2.down * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector2.right * Time.deltaTime);
+        }
+    }
+}
+{% endcode %}
+
+Now we have to hook up our script to the actual Game Object.
+
+Make sure you can see the **FishController** script at the bottom panel of your screen.
+Now press on the **fish** in your Scene View, and drag n' drop the script on to the **Inspector Panel** on the right side of the screen!
+
+You should see something added to the **Inspector pane** that looks like 
+"[x] Fish Controller (Script)"
+
+Now you can move your fishy on the screen!
+
+Tomorrow we will take a look at **public** variables in Unity and add some speed to our fish.
+
+See you guys tomorrow! :)
+
+## July 13, 2020
 
 Hey guys, so today we got everyone set up properly with Unity.
 
