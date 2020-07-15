@@ -6,6 +6,45 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 15, 2020
+
+Hey guys! Today's class was all about **Rooms** in PixelPad. A Room is basically a level in your game, but other things can be levels too like the Game Over screen, then Menu screen, or even the Victory screen! 
+
+The first thing did was create a new Room called **Level1** by pressing the **+** next to the **Rooms** label. 
+
+Now you are going to move **ALL** of the code from your Game script to your Level1 script in both the Start and Loop tabs!
+
+Now, all you need to do is put one line of code in your game to make everything work the way it did before!
+
+{% code Game/Start %}
+room_set('Level1')
+{% endcode %}
+
+Now we want to create a room for the Victory Screen, we will call it **RoomDone**
+
+We only put 2 lines of code in RoomDone that displays a fish in the middle of the screen:
+
+{% code LevelDone/Start %}
+fish = Fish()
+fish.sprite = sprite_new('fish.png')
+{% endcode %}
+
+Now, we just need to add the code that says if we collide with the sign (or whatever your **end** object is) then we set the room to the level done.
+
+So now, this code will be in **Level1** because we moved it to there from the Game script:
+
+{% code Level1/Loop %}
+# ...
+sign = collision_check(self.fish, "End")
+if sign:
+    room_set('LevelDone')
+{% endcode %}
+
+Now when you collide with the sign, you should see a fish.
+Tomorrow's class we will finish a Victory screen and display it when the user collides with the sign!
+
+Have a great day, see you all tomorrow :)
+
 ## July 14, 2020
 
 Today we talked about collision detection!! Woot Woot!

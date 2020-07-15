@@ -6,6 +6,64 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 15, 2020
+
+Hey guys and gals!
+Today's class covered the idea of **public** variables in Unity. So to showcase them, we created a public variable at the top of our **FishController** script called speed. It looked like this:
+
+{% code FishController.cs %}
+// ...
+public float speed;
+// ...
+{% endcode %}
+
+Now we can control that speed through Unity.
+
+Then we hooked up our speed to our code so that the fish would actually move at that speed. Once again, here is the whole code for your convinence:
+
+{% code FishController.cs %}
+// Using statements ...
+
+public class FishController : MonoBehaviour
+{
+    public float speed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.A))        
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.S))    
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+    }
+}
+{% endcode %}
+
+The last thing we did was litter the game with obstacles for our fish to avoid (or we worked with Photopea to make our obstacles :) )
+
+Have a great day and I'll 'see' you tomorrow! :)
+
 ## July 14, 2020
 
 Hey guys and gals!
