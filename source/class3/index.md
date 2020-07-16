@@ -6,6 +6,16 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 16, 2020
+
+Sup students of the internet in my calss?!
+
+Today we got organizational! We moved all of our game objects into **Parent Objects** and created sorting layers!
+
+There was no code written today, but what we did today will make tomorrow's class a million times easier :)
+
+Have a great day and I'll see you all tomorrow!!
+
 ## July 15, 2020
 
 Hey guys and gals!

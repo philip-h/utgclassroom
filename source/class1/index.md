@@ -6,6 +6,47 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 16, 2020
+
+Hey guys. 
+Today's class we got the victory screen in our game, then we made a quality of life addition to change the direction of the fish when we move left and right to make the fish look like it's always swimming forward!
+
+So to make the victory screen appear, it was a simple matter of showing the Victory image to the screen inside of the **LevelDone** room:
+
+{% code LevelDone/Start %}
+victory = Victory()
+victory.sprite = sprite_new('victory.png')
+{% endcode %}
+
+This will work provided you have created a class called **Victory** and named your victory image **victory.png**
+
+The second thing we did was flip our fish around using the **.scaleX** attribute.
+
+When we press the "a" key, we want to set the **scaleX** to -1, and when we presse the "d" key, set it back to 1.
+
+Here is whtat the modified movement code looks like:
+
+{% Level1/Loop %}
+# This code controls our fish, moving it with the wasd keys
+if key_is_pressed('w'):
+    self.fish.y = self.fish.y + 2
+
+if key_is_pressed('a'):
+    self.fish.x = self.fish.x - 2
+    self.fish.scaleX = -1
+
+if key_is_pressed('s'):
+    self.fish.y = self.fish.y - 2
+
+if key_is_pressed('d'):
+    self.fish.x = self.fish.x + 2
+    self.fish.scaleX = 1
+{% edncode %}
+
+And that's it! Tomorrow we make the enemies move!
+
+Have a great day, I'll see you all tomorrow!
+
 ## July 15, 2020
 
 Hey guys! Today's class was all about **Rooms** in PixelPad. A Room is basically a level in your game, but other things can be levels too like the Game Over screen, then Menu screen, or even the Victory screen! 
