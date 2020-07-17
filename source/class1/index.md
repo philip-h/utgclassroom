@@ -26,7 +26,7 @@ When we press the "a" key, we want to set the **scaleX** to -1, and when we pres
 
 Here is whtat the modified movement code looks like:
 
-{% Level1/Loop %}
+{% code Level1/Loop %}
 # This code controls our fish, moving it with the wasd keys
 if key_is_pressed('w'):
     self.fish.y = self.fish.y + 2
@@ -41,7 +41,7 @@ if key_is_pressed('s'):
 if key_is_pressed('d'):
     self.fish.x = self.fish.x + 2
     self.fish.scaleX = 1
-{% edncode %}
+{% endcode %}
 
 And that's it! Tomorrow we make the enemies move!
 
