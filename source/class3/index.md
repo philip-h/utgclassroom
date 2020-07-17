@@ -6,6 +6,24 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 17, 2020
+
+Hey guys!
+
+So today's class, we added components and modified them a bit to suit our needs.
+
+Here is the Long story Short of what we needed to do today:
+
+1. Add a **RigidBody2D** and a **BoxCollider2D** to every GameObject **except** background
+2. Under **RigidBody2D**>**constraints**, tick the **[] Freez Z** box.
+3. For every GameObject **except** background and fish, under the **BoxCollider2D** tick the box that sais **[] IsTrigger**.
+
+And honestly, that's all we did today!
+
+Monday's class will be collision detection and movement of the enemies :)
+
+See you then!!
+
 ## July 16, 2020
 
 Sup students of the internet in my calss?!

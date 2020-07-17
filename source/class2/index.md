@@ -6,6 +6,65 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 17, 2020
+
+Hey guys,
+So in today's class we focused on movement! We started puttin code in the Classes we were creating to show our images to the screen!
+The rule of thumb is: if you are going to duplicate the objects, it's probably best to have some code in the Classes that represent the Objects. 
+
+So I'm going to walk you guys through having the hooks (For me Enemy1) on my game bob up and down, and I'll leave it to you guys to do the same for the oter enemies!
+
+First thing's first, in our Enemy1 script, we will add the sprite code, and some variables that will keep track of where we started, what direction we are travelling, and how far we want to travel from where we started:
+
+{% code Enemy1/Start %}
+# Enemy1 start
+# Changes the sprite for EVERY Enemy1
+self.sprite = sprite_new('enemy1.png')
+
+# This will be changed when we make the Game Object
+self.originalY = 0
+# What direction (-1 means down, 1 means up)
+#      (x)       (-1 means left, 1 means right)
+self.direction = -1
+{% endcode %}
+
+Now, in the Loop of Enemy1, we have some code that checks to see if we have traveled too far from our origin. If we have, we change the direction!
+
+{% code Enemy1/Loop %}
+# If my object is more than "50px" away from where it started,
+# Then change the direction
+if abs(self.y - self.originalY) > 50:
+    self.direction = self.direction * -1
+
+self.y = self.y + self.direction
+{% endcode %}
+
+Now, the last thing we have to do is modify our Level1 code to reflect these changes (Take out the sprite code for Enemy1 and add the originalY code)
+
+{% code Level1/Start %}
+# Creates a new hook and moves it to the position (100, 200)
+self.hook = Enemy1()
+self.hook.x = 100
+self.hook.y = 200
+self.hook.originalY = 200 
+
+self.hook1 = Enemy1()
+self.hook1.x = -100
+self.hook1.y = 50
+self.hook1.originalY = 50
+
+self.hook2 = Enemy1()
+self.hook2.x = 97
+self.hook2.y = -78
+self.hook2.originalY = -78
+{% endcode %}
+
+Notice how all of my hooks don't have the sprite code, and all of the self.hook**X**.originalY attributes are the same as the self.hook**X**.y attributes!
+
+And that's it! If you follow these steps for the other 2 enemies, then we will be done!
+
+Have a great weekend and I'll see you guys on Monday! :)
+
 ## July 16, 2020
 
 Hey guys. 
