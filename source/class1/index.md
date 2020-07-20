@@ -6,6 +6,17 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 20, 2020
+
+Hey guys!
+So in today's class, once we got all of the objects on the screen moving, our goal was to work on a Level2 room!
+
+The idea is that once we complete Level1, instead of going to the LevelDone screen, we will go to a new **Level2** screen. Once the player has finished **Level2**, they will then go to the LevelDone screen.
+
+How you implement, the sprites, the difficulty of the Level are all up to you. PLEASE be creative and have fun with this!
+
+See you guys tomorrow! :)
+
 ## July 17, 2020
 
 Hey guys,

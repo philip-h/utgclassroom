@@ -6,6 +6,73 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 20, 2020
+
+Hey guys, so in today's class, we finally added some code for the collision detection! 
+
+First, we made sure that all of our enemy GameObjects had a **Tag** of **Enemy**. (Remember Tags are at the top of the **Inspector Pane**)
+
+Here's the code that made the collision detection work.
+Once again, I'll post the entire script so you can see where the code needs to be placed!
+
+{% code FishController.cs %}
+// Imports ...
+public class FishController : MonoBehaviour
+{
+    public float speed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // If we press the 'w' key
+        if (Input.GetKey(KeyCode.W))
+        {
+            // Move up by speed pixels
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+        }
+        // If we press the 'a' key
+        if (Input.GetKey(KeyCode.A))        
+        {
+            // Move left by speed pixels
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+        // If we press the 's' key
+        if (Input.GetKey(KeyCode.R))
+        {
+            // Move down by speed pixels
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+        // If we press the 'd' key
+        if (Input.GetKey(KeyCode.S))    
+        {
+            // Move right by speed pixels
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+    }
+
+    // Whenever the fish collides with something that has a box collider and isTrigger is set, this method fires up!
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // If what we collided with has the Tag "Enemy"
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Destroy the fish!
+            Destroy(gameObject);
+        }
+
+    }
+}
+{% endcode %}
+
+That's all! Tomorrow we will make the enemies move!
+Have a great Monday :)
+
 ## July 17, 2020
 
 Hey guys!
