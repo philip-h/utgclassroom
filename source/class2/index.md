@@ -6,6 +6,15 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 21, 2020
+
+Hey guys, in today's class, we just continued working on our Level 2!
+I've just taken a look and they are all coming along quite well.
+
+Tomorrow we will play it by ear to see if we need more time.
+
+Have a great day and I'll see you guys tomorrow! :)
+
 ## July 20, 2020
 
 Hey guys!

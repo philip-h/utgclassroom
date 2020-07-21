@@ -6,6 +6,39 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 21, 2020
+
+Hey guys.
+In today's class, we used **sin** to make our enemies move up and down.
+
+Here is the code, and remember to attach this code to **one** enemy.
+
+{% code EnemyController.cs %}
+// Imports ...
+public class EnemyController : MonoBehaviour
+{
+    public float speed = 2f;
+    public float distance = 2f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // This makes the enemy move up and down like it's on a circle!
+        transform.Translate(Vector2.down * Mathf.Sin(Time.time * speed) * distance * Time.deltaTime);
+    }
+}
+{% endcode %}
+
+Tomorrow we will make all the objects move, and move on to changing levels when we reach a certain point in the game!
+
+See you guys tomorrow :)
+
 ## July 20, 2020
 
 Hey guys, so in today's class, we finally added some code for the collision detection! 
