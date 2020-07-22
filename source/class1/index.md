@@ -6,6 +6,15 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 22, 2020
+
+Hey guys,
+
+In today's class we are still working on Level2! 
+Tomorrow we will finish it off and start to look at animations!
+
+See you guys tomorrow!
+
 ## July 21, 2020
 
 Hey guys, in today's class, we just continued working on our Level 2!

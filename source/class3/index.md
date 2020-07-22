@@ -6,6 +6,42 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 22, 2020
+
+Hey!
+So in today's class we just made it so every Enemy object could move. We did that by adding the **EnemyController.cs** script to each enemy, and modifying the **speed** and **distance** variables to get a cool, and difficult, game!
+
+The last thing we did was setup collision detection for the **end of the level** object. We first had to create a new **Tag** called **End** and make sure we assign the new tag to the GameObject.
+
+Then we modified the collision code from yesterday to include a collision 
+for the sign.
+
+I'm only going to put the **OnTriggerEnter2D** code, you should be able to see where it goes!
+
+{% code FishController.cs %}
+// Whenever the fish collides with something that has a box collider and isTrigger is set, this method fires up!
+private void OnTriggerEnter2D(Collider2D collision)
+{
+    // If what we collided with has the Tag "Enemy"
+    if (collision.gameObject.CompareTag("Enemy"))
+    {
+        // Destroy the fish!
+        Destroy(gameObject);
+    }
+
+    // We are going to type right here!
+    if (collision.gameObject.CompareTag("End"))
+    {
+        Debug.Log("Change scene to Level2");
+    }
+
+}
+{% endcode %}
+
+Right now, it just prints something to the screen, tomorrow, it will change Scenes for us. (But to do that, we need to talk about what a scene actually is, so that's why I left it for tomorrow!)
+
+Have a great day and I'll see you guys tomorrow :)
+
 ## July 21, 2020
 
 Hey guys.
