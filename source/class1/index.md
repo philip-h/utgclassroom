@@ -5,6 +5,12 @@ order: 1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+## July 23, 2020
+
+Once again, we just worked on Level2!
+Today was the last day, and tomorrow we will start with animations!
+
+Have a great day, see you all tomorrow :)
 
 ## July 22, 2020
 

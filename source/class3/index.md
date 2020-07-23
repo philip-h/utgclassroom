@@ -6,6 +6,88 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 23, 2020
+
+Hey peoples!
+
+So today in class we talked about Scene management, and learned how to change scenes. It's actually really easy, and takes one line of code:
+
+{% code example.cs %}
+SceneManager.LoadScene("Level2");
+{% endcode %}
+
+To help out, I will post the entire **FishController.cs** file (including the using statements) so you can ensure it's going to work properly
+
+{% code FishController.cs %}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class FishController : MonoBehaviour
+{
+    public float speed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // If we press the 'w' key
+        if (Input.GetKey(KeyCode.W))
+        {
+            // Move up by speed pixels
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+        }
+        // If we press the 'a' key
+        if (Input.GetKey(KeyCode.A))        
+        {
+            // Move left by speed pixels
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+        // If we press the 's' key
+        if (Input.GetKey(KeyCode.R))
+        {
+            // Move down by speed pixels
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+        // If we press the 'd' key
+        if (Input.GetKey(KeyCode.S))    
+        {
+            // Move right by speed pixels
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+    }
+
+    // Whenever the fish collides with something that has a box collider and isTrigger is set, this method fires up!
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // If what we collided with has the Tag "Enemy"
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Destroy the fish!
+            Destroy(gameObject);
+        }
+
+        // If what we collided with has the Tag "End"
+        if (collision.gameObject.CompareTag("End"))
+        {
+            Debug.Log("Change scene to Level2");
+            // Change Scene to Level2
+            SceneManager.LoadScene("Level2");
+        }
+
+    }
+}
+{% endcode %}
+
+
+And that's it! Have a great day. Tomorrow we will work on our Victory screen and start our level2!
+
 ## July 22, 2020
 
 Hey!
