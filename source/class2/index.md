@@ -6,6 +6,64 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 24, 2020
+
+Hey guys!
+In today's class, we talked about the movement of our player and how to make him move in the direction it's facing.
+There are 2 important steps to this!
+1. Ensuring we are changing the angle of our player (which we are using the left and right arrow keys)
+2. Using the **sin** and **cos** functions in the **math** library of Python.
+
+Then we made our space ship shoot bullets by pressing the space key!
+But before we get ahead of ourselves, here is the code for the Player
+
+{% code Player/Loop %}
+# Imports the math library that lets use sin and cos and radians
+import math
+
+# If we press the right arrow key 
+if key_is_pressed('arrowright'):
+    # Rotate our player right
+    self.angle = self.angle - 3
+
+# If we press the left arrow key
+if key_is_pressed('arrowleft'):
+    # Rotate our player left
+    self.angle = self.angle + 3
+
+# If we press the up arrow key
+if key_is_pressed('arrowup'):
+    # Move the player in the direction he is facing
+    self.x = self.x + math.cos(math.radians(90+self.angle))*2
+    self.y = self.y + math.sin(math.radians(90+self.angle))*2
+
+# If we press the space key
+if key_was_pressed(' '):
+    # Launch a missile!
+    missile = Missile()
+    missile.x = self.x
+    missile.y = self.y
+{% endcode %}
+
+The final lines of code we had were inside the **Missile** class that told each missle to do two things
+1. Move up
+2. If it moves up past the screen, destroy it
+
+Here's what that code looks like
+{% code Missle/Loop %}
+# Makes the missile constantly move up
+self.y = self.y + 3
+
+# If our missile is off the screen, destroy it!
+if self.y > 300:
+    destroy(self)
+{% endcode %}
+
+And that's it!
+Monday we will focus on making the missile move in the direction the ship is facing, then we will tackle collision detection :)
+
+See you guys on Monday!
+
 ## July 23, 2020
 
 Hey guys, so today we started our new game **Asteroids**

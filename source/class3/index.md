@@ -6,6 +6,14 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 24, 2020
+
+Hello internet folk.
+Today we were tasked with creating our own Level2 using what we learned from making Level1!
+This took up the whole class!
+
+Have a great weekend guys, and on Monday we will start with our new topic: animations!
+
 ## July 23, 2020
 
 Hey peoples!

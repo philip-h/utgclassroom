@@ -5,6 +5,30 @@ order: 1
 icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
+
+## July 24, 2020
+
+Hey guys! Today we all finished our Level2! Wooh!
+So we took the class to focus on animations. We created a two-sprite spritesheet and imported it into pixelpad. We over-wrote the code in the **Fish** class to make it work.
+
+Here is the code to get the animations to work:
+
+{% code Fish/Start %}
+
+# This creates a sprite sheet that has 1 row and 2 columns
+spritesheet = sprite_new('ssfish.png', 1, 2)
+
+# This creates a swim animation using the spritesheet
+# at 3 FPS, starting at frame 0 and ending at frame 1
+swim = animation_new(spritesheet, 3, 0, 1)
+
+# This runs the animation
+animation_set(self, swim)
+{% endcode %}
+
+And that's it!
+Monday, we begin the adventure of Game2!
+
 ## July 23, 2020
 
 Once again, we just worked on Level2!
