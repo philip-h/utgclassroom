@@ -6,6 +6,78 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 27, 2020
+Hey! We had a busy day, so let's recap what we did!
+
+The first thing we did was make the missile move in the direction of it's angle.
+And while we were at it, we added some code that made the bullet self-destruct if it reached the end of the screen.
+
+All this code was written in **Missile**.
+
+{% code Missile/Loop %}
+import math
+
+# Make missile move in the direction of its angle
+self.x = self.x + math.cos(math.radians(90+self.angle))*2
+self.y = self.y + math.sin(math.radians(90+self.angle))*2
+
+# If our missile is off the screen, destroy it!
+# If it goes off the top of the screen
+if self.y > 300:
+    destroy(self)
+
+# If it goes off the bottom of the screen
+elif self.y < -300:
+    destroy(self)
+
+# If it goes off the right of the screen
+elif self.x > 300:
+    destroy(self)
+
+# If  it does off the left of the screen
+elif self.x < -300:
+    destroy(self)
+{% endcode %}
+
+Next, we added some **Teleport Boundaries** for our PlayerShip. Basically, if the ship goes past the bottom of the screen, the ship will teleport to the top of the screen.
+
+{% code Player/Loop %}
+# ...
+
+# Teleport Boundaries
+# Teleport from top to bottom
+if self.y > 250:
+    self.y = -250
+
+# Teleport from bottom to top
+if self.y < -250:
+    self.y = 250
+
+# Teleport from top to left
+if self.x > 280:
+    self.x = -280
+
+# Teleport from bottom to right
+if self.x < -280:
+    self.x = 280
+{% endcode %}
+
+The final thing we did was set up the collision detection between the Missile and the Asteroid. 
+To know where to place the code, ask yourself "Does the Missile collide with the Asteroid, or does the Asteroid collide with the Missile?" Because we agreed that the "Missile collides with the Asteroid", we place the following code in **Missile**
+
+{% code Missile/Loop %}
+# ...
+# Check to see if the missile collides with the asteroid!
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+    destroy(asteroid)
+    destroy(self)
+{% endcode %}
+
+Tomorrow we will start to spawn asteroids and make them move!
+
+Have a great day, see you guys tomorrow!
+
 ## July 24, 2020
 
 Hey guys!

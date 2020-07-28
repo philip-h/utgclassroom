@@ -6,6 +6,16 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 27, 2020
+Hey guys, so today we started our new game **Asteroids**
+I encourage you guys to play the game and get a feel for how it works, here is a link if you want:
+
+[https://astrds.com/](https://astrds.com/)
+
+So today in class, we simply created our assets and put them into PixelPad. Tomorrow we will start with the interactions!!
+
+See you guys tomorrow :)
+
 ## July 24, 2020
 
 Hey guys! Today we all finished our Level2! Wooh!

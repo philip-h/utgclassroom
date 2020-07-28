@@ -6,6 +6,14 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 27, 2020
+
+Today's class we completely finished off level 2!
+
+In tomorrow's class, we will talk about animations and how to set one up in Unity!
+
+See you guys then :)
+
 ## July 24, 2020
 
 Hello internet folk.
