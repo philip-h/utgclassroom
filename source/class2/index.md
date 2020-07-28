@@ -6,6 +6,73 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 28, 2020
+
+Sup peoples?!
+The first thing we did in class was make that asteroid move and also give it the same **Teleport Boundaries** we gave our PlayerShip!
+
+{% code Asteroid/Loop %}
+#Asteroid loop
+
+import math
+
+# Make the asteroid move in the direction of its angle
+self.x = self.x + math.cos(math.radians(90 + self.angle))*1.5
+self.y = self.y + math.sin(math.radians(90 + self.angle))*1.5
+
+# Teleport boundaries
+# From top to bottom
+if self.y > 250:
+    self.y = -250
+
+# From bottom to top
+if self.y < -250:
+    self.y = 250
+
+# From right to left
+if self.x > 280:
+    self.x = -280
+
+# From left to right
+if self.x < -280:
+    self.x = 280
+{% endcode %}
+
+Then we worked on the **Spawner** code! A spawner is an object that spawns other objects.
+
+{% code Spawner/Start %}
+
+# Set up the timer for delayed spawning
+self.timer = 0
+
+# Remove the "Empty Image" blue box
+self.y = 500
+{% endcode %}
+
+Every 7 seconds, spawn a new asteroid, and give it some random angle and position on the screen!
+
+{% code Spawner/Loop %}
+import random
+
+self.timer = self.timer + 1
+
+if self.timer > 60*10:
+    self.timer = 0
+
+    asteroid = Asteroid()
+    asteroid.angle = random.randint(0,360)
+    asteroid.x = 250
+    asteroid.y = 250
+    asteroid.sprite = sprite_new('asteroid' + str(random.randint(1,3)) + '.png')
+{% endcode %}
+
+And that's it!
+
+We are honestly almost done this game!
+All that's left is the score, lives, and the main menu :)
+
+See you guys tomorrow
+
 ## July 27, 2020
 Hey! We had a busy day, so let's recap what we did!
 

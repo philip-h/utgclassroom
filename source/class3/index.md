@@ -6,6 +6,13 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 28, 2020
+
+Today's class was spent creating a **SpriteSheet** (that we uplaoded to Unity) that has just 2 frames of an animation. 
+Tomorrow's class we will look at how to actually animate this!
+
+See you guys tomorrow :)
+
 ## July 27, 2020
 
 Today's class we completely finished off level 2!

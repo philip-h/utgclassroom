@@ -6,6 +6,66 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 28, 2020
+
+Hey guys.
+Today we began writing the code for our new game! We didn't write too much code, but it was all over the place, so hopefully seeing it all in one place will help you make sense of it more! :)
+
+The first thing we did was set up our game to point to room level 1
+
+{% code Game/Start %}
+# Global Variables
+
+
+room_set('Level1')
+{% endcode %}
+Remember I left a bit of room at the top of the file for later use.
+
+Next, we filled in our Level1!
+
+{% code Level1/Start %}
+player = Ship()
+
+missile = Missile()
+missile.y = 50
+
+asteroid = Asteroid()
+asteroid.x = 150
+asteroid.y = 125
+
+{% endcode %}
+
+Now we see a bunch of blue squares everywhere. Well, we have to go in to each class and set the sprite up so we can see what each GameObjcet represents:
+
+{% code Ship/Start %}
+self.sprite = sprite_new('ship.png')
+{% endcode %}
+
+{% code Missile/Start %}
+self.sprite = sprite_new('missile.png')
+{% endcode %}
+
+{% code Asteroid/Start %}
+self.sprite = sprite_new('asteroid1.png')
+{% endcode %}
+
+The last thing we did was make the PlayerShip move (and rotate) when pressing the arrow keys! 
+
+{% code Ship/Loop %}
+if key_is_pressed('arrowup'):
+    self.y = self.y + 2
+
+if key_is_pressed('arrowleft'):
+    self.angle = self.angle + 5
+
+if key_is_pressed('arrowright'):
+    self.angle = self.angle - 5
+{% endcode %}
+
+Tomorrow we will make the ship move in the direction it is facing!
+
+See you guys then :)
+
 ## July 27, 2020
 Hey guys, so today we started our new game **Asteroids**
 I encourage you guys to play the game and get a feel for how it works, here is a link if you want:
