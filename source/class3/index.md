@@ -6,6 +6,15 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 29, 2020
+
+Today we got our animation set up in Unity.
+I apologize for how slowly classes seem to be going with the animation!
+
+Tomorrow's class will speed up and we begin to tackle a brand new game :)
+
+See y'all then!!!
+
 ## July 28, 2020
 
 Today's class was spent creating a **SpriteSheet** (that we uplaoded to Unity) that has just 2 frames of an animation. 

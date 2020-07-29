@@ -6,6 +6,60 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 29, 2020
+
+Hello internet peepz.
+Todays class we tried a couple things... some things worked, other's did not haha.
+
+What we actually got done today was displaying the lives (at the beginning at least) and creating a start screen for our game (just the room and the code)
+
+Here is the code for the lives display.
+First we need to setup the sprite for the **Lives** class
+
+{% code Lives/Start %}
+self.sprite = sprite_new('ship.png')
+{% endcode %}
+
+Now to display the lives
+
+{% code Level1/Start %}
+# ...
+
+# Displays the number of lives that the player has!
+for i in range(game.lives):
+    life = Lives()
+    life.y = 200
+    life.x = -200 + i*16
+{% endcode %}
+
+Next we created a new room called **StartScreen** that will be displayed at the beginning of our game.
+Once displayed, the user must set the room to Level1by pressing the space bar:
+
+{% code StartScreen/Loop %}
+# If the user presses the space key, change the room to "Level1"\
+if key_was_pressed(' '):
+	room_set('Level1')
+{% endcode %}
+
+Finally, we need to make sure our **lives** and **score** variables are set up in **Game**, which now looks like this
+
+{% code Game/Start %}
+# Global Variables
+self.score = 0
+self.lives = 3
+
+# Change the room to room level1
+room_set('StartScreen')
+{% endcode %}
+
+And that's actually all the code we wrote today.
+
+Tomorrow we will go over score, lives, and any final touches to our game (like maybe sounds?!)
+
+See you then!
+
+
+
 ## July 28, 2020
 
 Sup peoples?!

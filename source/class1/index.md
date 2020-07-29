@@ -6,6 +6,82 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 29, 2020
+
+Hey guys, so today we got our ship and missiles moving in the proper direction.
+We did that by using the math library in Python to calculate the **sin** and **cos** of the angle that PixelPad stores. (Just in case you were curious)
+
+We also made it so that when the player goes too far in any direction, he is teleported to the opposite side of the screen, and made it so that we could shoot missiles by pressing the space bar.
+
+Here is the entire Player code for reference
+
+{% code Ship/Loop %}
+import math
+
+if key_is_pressed('arrowup'):
+    # Move the ship at the angle we are facing
+    self.x = self.x + math.cos(math.radians(90 + self.angle))*2
+    self.y = self.y + math.sin(math.radians(90 + self.angle))*2
+
+if key_is_pressed('arrowleft'):
+    self.angle = self.angle + 5
+
+if key_is_pressed('arrowright'):
+    self.angle = self.angle - 5
+
+if key_is_pressed(' '):
+    missile = Missile()
+    missile.x = self.x
+    missile.y = self.y
+    missile.angle = self.angle
+
+
+# Teleport Boundaries
+# From bottom to top
+if self.y < -250:
+    self.y = 250
+
+# From top to bottom
+if self.y > 250:
+    self.y = -250
+
+# From left to right
+if self.x < -300:
+    self.x = 300
+
+# From right to left
+if self.x > 300:
+    self.x = -300
+{% endcode %}
+
+Then we had to make sure the missile would move too!
+
+{% code Missile/Loop %}
+import math
+
+self.x = self.x + math.cos(math.radians(90 + self.angle)) * 4
+self.y = self.y + math.sin(math.radians(90 + self.angle)) * 4
+
+# Destroys the missile if it goes outside of the screen!
+if self.y < -250:
+    destroy(self)
+
+if self.y > 250:
+    destroy(self)
+
+if self.x < -280:
+    destroy(self)
+
+if self.x > 280:
+    destroy(self)
+{% endcode %}
+
+You'll notice in this code that the last thing we did was destroy the missile when it left the screen (instead of teleporting it like we did with our player)
+
+Tomorrow's class will focus on collision detection! :) 
+See you guys then!
+
+
 ## July 28, 2020
 
 Hey guys.
