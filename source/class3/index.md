@@ -6,6 +6,14 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 30, 2020
+
+Hey!
+So today was another slow day, and again apologies. It's hard to do these classes online.
+We downloaded the "Sunny Land Assets" and tomorrow we will design a really cool looking game! :)
+
+See you guys then!
+
 ## July 29, 2020
 
 Today we got our animation set up in Unity.

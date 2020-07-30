@@ -6,6 +6,38 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 30, 2020
+
+Hey guys, today we worked on collision detection!
+That's what happens when two GameObjects collide with one anoher. PixelPad gives us the ability to decide what happens when two object collide!!
+
+So we set up the collision detection between the Missile and the Asteroid. 
+To know where to place the code, ask yourself "Does the Missile collide with the Asteroid, or does the Asteroid collide with the Missile?" Because we agreed that the "Missile collides with the Asteroid", we place the following code in **Missile**
+
+{% code Missile/Loop %}
+# ...
+# Check to see if the missile collides with the asteroid!
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+    destroy(asteroid)
+    destroy(self)
+{% endcode %}
+
+Next we added collision detection between the player and the asteroid.
+We put it in the player script:
+
+{% code Player/Loop %}
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+    destroy(asteroid)
+    destroy(self)
+{% endcode %}
+
+And that's it! Tomorrow's class we will focus on making the asteroid move, then spawn some more asteroids!
+
+See you guys tomorrow :)
+
+
 ## July 29, 2020
 
 Hey guys, so today we got our ship and missiles moving in the proper direction.

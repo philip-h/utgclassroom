@@ -6,6 +6,50 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 30, 2020
+
+Hello!
+We tied up a few loose ends today, let's take a look at what they were.
+
+First we added a start screen to our game!
+We created a new class (**I called mine Splash**) and placed the following code in it
+
+{% code Splash/Start %}
+self.sprite = sprite_new('startscreen.png')
+{% endcode %}
+
+Then in our new room **StartScreen** we wrote
+
+{% code StartScreen/Start %}
+Splash()
+{% endcode %}
+
+The next thing we did was actually make the player die when it loses all its lives.
+Here is the new player code
+
+{% code Player/Loop %}
+# ...
+
+# If we get hit by an asteroid
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+    game.lives = game.lives - 1
+    destroy(asteroid)
+{% endcode %}
+
+Now right below that, we check to see if our lives are less than 0. If they are, destroy the player!
+
+
+{% code Player/Loop %}
+# ...
+
+if game.lives <= 0:
+    destroy(self)
+{% endcode %}
+
+And that's it!
+Tomorrow we will finish tying up loose ends, and look at the next game we will be making!
+
 ## July 29, 2020
 
 Hello internet peepz.
