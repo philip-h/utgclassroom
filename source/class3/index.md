@@ -6,6 +6,11 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## July 31, 2020
+
+Today we fixed the **Pixels Per Unit** on our assets and set up the IDLE animation for our player. 
+REMEMBER Monday August 3rd is a HOLIDAY, so enjoy the break and I'll see you guys on Tuesday! :)
+
 ## July 30, 2020
 
 Hey!

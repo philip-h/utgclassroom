@@ -6,6 +6,18 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 31, 2020
+
+So in today's class, we just looked for sprite packs and thought of ideas for our new game.
+
+Here are a coulple of examples of websites that may be useful!
+
+[itch.io](https://itch.io/game-assets)
+[praftpix.net](https://craftpix.net/freebies/)
+[opengameart.org](https://opengameart.org/art-search-advanced?keys=&field_art_type_tid%5B%5D=9&sort_by=count&sort_order=DESC)
+
+REMEMBER Monday August 3rd is a HOLIDAY, so enjoy the break and I'll see you guys on Tuesday! :)
+
 ## July 30, 2020
 
 Hello!

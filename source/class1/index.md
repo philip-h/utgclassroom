@@ -6,6 +6,67 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## July 31, 2020
+
+Hey guys, in today's class we made our asteroids move, and made a spawner for them!
+
+First, to make the asteroids move (and teleport when whey collide with boundaries)
+
+{% code Asteroid/Start %}
+import math
+# Moves the asteroid in the direction of the angle
+self.x = self.x + math.cos(math.radians(90 + self.angle))*2
+self.y = self.y + math.sin(math.radians(90 + self.angle))*2
+
+# Teleport boundaries
+# From top to bottom
+if self.y > 250:
+    self.y = -250
+
+# From bottom to top
+if self.y < -250:
+    self.y = 250
+
+# From right to left
+if self.x > 280:
+    self.x = -280
+
+# From left to right
+if self.x < -280:
+    self.x = 280
+{% endcode %}
+
+Next, we created a spawner
+
+{% code Spawner/Start %}
+self.timer = 0
+
+# Get rid of empty image box
+self.x = 3141592653589893238
+{% endcode %}
+
+{% code Spawner/Loop %}
+import random
+
+self.timer = self.timer + 1
+
+if self.timer > 180:
+    # Resets the timer
+    self.timer = 0
+    # Spawns a new asteroid
+    asteroid = Asteroid()
+    # Generate a random angle between 0 and 360
+    random_angle = random.randint(0,360)
+    # Set the angle of the asteroid to the random angle
+    asteroid.angle = random_angle
+    # Move the asteroid to (300,-300)
+    asteroid.x = 300
+    asteroid.y = -300   
+{% endcode %}
+
+And that's it! 
+REMEMBER Monday August 3rd is a HOLIDAY, so enjoy the break and I'll see you guys on Tuesday! where we will set up a score and lives!
+  
 ## July 30, 2020
 
 Hey guys, today we worked on collision detection!
