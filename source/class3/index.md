@@ -6,6 +6,53 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 4, 2020
+
+Heyo!
+
+In today's class, we finished setting up the animations, and created some code to move the player left and right.
+I provided you guys with the left movement, and let you guys implement the right movement.
+
+Here's is both completed.
+
+{% code PlayerController.cs %}
+// Using statements
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 2f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // If I press the left arrow key
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            // Move player to the left
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+
+        // If I press the right arrow key
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            // Move player to the right
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+    }
+}
+{% endcode %}
+
+That's it!
+Tomorrow we'll hook up the animations with the movement :)
+
+See you peoples then!
+
 ## July 31, 2020
 
 Today we fixed the **Pixels Per Unit** on our assets and set up the IDLE animation for our player. 

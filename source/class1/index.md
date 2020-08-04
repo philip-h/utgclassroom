@@ -6,6 +6,53 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 4, 2020
+Hey guys.
+
+In today's class, we worked on implementing the score and the lives in our game!
+We did score together and lives separately, but I'll put the code for both here!
+
+First thing, create the **Global** variables. So our game script now looks like this.
+
+{% code Game/Start %}
+# Global variables
+self.score = 0
+self.lives = 3
+
+room_set('Level1')
+{% endcode %}
+
+Next, we increase the score (or descrease our lives) if an appropreate collision happens. For increasing our score, it's when a missile collides with an asteroid
+
+{% code Missile/Loop %}
+# ...
+
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+    # destroy the missile and the asteroid
+    destroy(self)
+    destroy(asteroid)
+    # Increaded our score by 25
+    game.score = game.score + 25
+    print("Your score is now", game.score)
+{% endcode %}
+
+For decreasing our lives, it happens when our Ship collides with an asteroid! NOTE that when we exhaust all of our lives, we need to destroy the ship, not when it collides with the asteroid!
+
+{% code Player/Loop %}
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+    destroy(asteroid)
+    # Get rid of destroy(self)
+    game.lives = game.lives - 1
+    print('You have', game.lives, 'lives left')
+
+if game.lives <= 0:
+    destroy(self)
+{% endcode %}
+
+And that's it! Tomorrow's class we'll create a splash screen, and begin to look at the next game we will be creating! :)
+
 ## July 31, 2020
 
 Hey guys, in today's class we made our asteroids move, and made a spawner for them!

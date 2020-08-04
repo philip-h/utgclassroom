@@ -6,6 +6,15 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 4, 2020
+
+Hey guys, in today's class, I had a meeting with you guys individually to see how your game sprite search was coming along!
+So far, so good! Keep at it, and designing the level.
+
+Remember that one thing that may be helpful is designing your level in [Photopea](https://www.photopea.com/) and importing them into PixelPad. I'll leave that decision up to you!
+
+Have a great day and I'll see you all tomorrow :)
+
 ## July 31, 2020
 
 So in today's class, we just looked for sprite packs and thought of ideas for our new game.
