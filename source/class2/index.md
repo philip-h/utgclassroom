@@ -6,6 +6,13 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 5, 2020
+
+In today's class we continued working on our new game.
+Wow, that was an easy post ;)
+
+See you guys tomorrow!
+
 ## August 4, 2020
 
 Hey guys, in today's class, I had a meeting with you guys individually to see how your game sprite search was coming along!

@@ -6,6 +6,60 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 5, 2020
+
+Hello!
+In today's class we created transitions for our animations.
+Then we hooked up those transitions in our code.
+
+Here is the **PlayerController.cs** code for reference!
+
+{% code PlayerController.cs %}
+// Using statements...
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 2f;
+    Animator animator;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // If I press the left arrow key
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            // Move player to the left
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            animator.SetBool("IsMoving", true);
+        }
+
+        // If I press the right arrow key
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            // Move player to the right
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            animator.SetBool("IsMoving", true);
+        }
+
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+    }
+}
+{% endcode %}
+
+And that's all!
+Tomorrow we will work on the croutch and get to tiling our level! :)
+See you all then
+
 ## August 4, 2020
 
 Heyo!

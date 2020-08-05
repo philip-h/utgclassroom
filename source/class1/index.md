@@ -6,6 +6,43 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 5, 2020
+
+Hey guys.
+In today's class we created a splash screen in [Photopea](https://www.photopea.com/) and added it to our game!
+
+First we created a new class (I called my class **SplashScreen**), a new room (I called my woom **StartScreen**), and imported our sprite (I called mine **splashscreen.png**).
+
+We changed our Game code to set the room to **StartScreen**
+
+{% code Game/Start %}
+# ...
+room_set('StartScreen')
+{% endcode %}
+
+Then we added code that binds our sprite to the Class
+
+{% code SplashScreen/Start %}
+self.sprite = sprite_new('splashscreen.png')
+{% endcode %}
+
+And then we made the **StartScreen** room show us our Class
+
+{% code StartScreen/Start %}
+SplashScreen()
+{% endcode %}
+
+The last thing we did was make it so that when the user presses the space key in our **StartScreen** they will be transported to the game.
+
+{% code StartScreen/Loop %}
+if key_was_pressed(' '):
+    room_set('Level1')
+{% endcode %}
+
+And that's it!
+Tomorrow we'll see about the lives display and start our new game journey.
+See y'all then :)
+
 ## August 4, 2020
 Hey guys.
 
