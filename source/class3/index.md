@@ -6,6 +6,62 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 6, 2020
+
+Hey guys, so in today's class, we finished up the transitions of our player! We got the crouch animation working, and transitioned between all of our animation states.
+
+In the process, we re-worked our update function. Here is the Update function is all of its glory.
+(Also, at the end of class, we added the **localScale** code to flip our character whenever it moves left and right)
+
+{% code PlayerController.cs %}
+    void Update()
+    {
+        // If I press the left arrow key
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            // Move player to the left
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            // Make player face left
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            animator.SetBool("IsMoving", true);
+        // If I release the left arrow key
+        } else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+
+        // If I press the right arrow key
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            // Move player to the right
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            // Make the player face right
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            animator.SetBool("IsMoving", true);
+        // If I release the right arrow key
+        } else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+        // If I press the down arrow key
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("IsCrouching", true);
+        }
+        // If I release the down arrow key
+        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            animator.SetBool("IsCrouching", false);
+        }
+    }
+{% endcode %}
+
+And that's it! Tomorrow we will start tiling, promise :)
+See you all then :) 
+
+
 ## August 5, 2020
 
 Hello!

@@ -6,6 +6,13 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 6, 2020
+
+I'm really liking the looks of your games!
+Keep at it, and don't be afraid to ask questions!
+
+See you all tomorrow!
+
 ## August 5, 2020
 
 In today's class we continued working on our new game.

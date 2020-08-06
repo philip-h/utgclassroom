@@ -6,6 +6,63 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 6, 2020
+
+Hello!
+So in today's class we implemented our lives system!
+
+First we created a new class called **Lives** and made the sprite for lives our ship sprite
+
+{% code Lives/Start %}
+self.sprite = sprite_new('ship.png')
+{% endcode %}
+
+Then, in our **Level1** room, we set up our lives to display on the top left of the screen
+
+{% code Level1/Start %}
+# ...
+game.lives1 = Lives()
+game.lives1.y = 200 
+game.lives1.x = -250
+
+game.lives2 = Lives()
+game.lives2.y = 200
+game.lives2.x = -250+16
+
+game.lives3 = Lives()
+game.lives3.y = 200
+game.lives3.x = -250+32
+{% endcode %}
+
+Then finally, we destroyed our lives one by one based upon how many lives we had after colliding with an asteroid. I'll put the whole collision code for reference.
+
+{% code Player/Loop %}
+
+# If the player collides with an asteroid
+# Destroy the asteroid, player loses a life
+asteroid = collision_check(self, "Asteroid")
+if asteroid:
+
+    destroy(asteroid)
+    game.lives = game.lives - 1
+
+    if game.lives == 2:
+        destroy(game.lives3)
+    elif game.lives == 1:
+        destroy(game.lives2)
+    elif game.lives == 0:
+        destroy(game.lives1)
+
+if game.lives <= 0:
+    destroy(self)
+    room_set('GameOverScreen')
+{% endcode %}
+
+Also note we set our room to **GameOverScreen** to show when we ran out of lives (we did that at the end of class :) )
+
+And that's it! Tomorrow we start our new game!!!
+See you all then.
+
 ## August 5, 2020
 
 Hey guys.
