@@ -6,6 +6,26 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 7, 2020
+
+Hey!
+So in calss today we started our own game!!! This is going to be an exciting week, I know it.
+I love all of your ideas, and I think your games are going to be great.
+
+Here is a list of all the links I mentioned in class to help you out :)
+
+For sprite creation
+- [Photopea](https://www.photopea.com/)
+- [Piskel](https://www.piskelapp.com/)
+
+For finding sprites online
+- [itch.io](https://itch.io/game-assets)
+- [praftpix.net](https://craftpix.net/freebies/)
+- [opengameart.org](https://opengameart.org/art-search-advanced?keys=&field_art_type_tid%5B%5D=9&sort_by=count&sort_order=DESC)
+
+Have a great weekend, and I'll see you guys on Monday.
+
+
 ## August 6, 2020
 
 Hello!
