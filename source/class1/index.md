@@ -6,6 +6,14 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 10, 2020
+
+LAST WEEK OF CLASSES!
+There won't be much to post here this week! We will we working on our games, and asking for help as needed.
+Eventually, I will post the code for the game I create in this time so you can play around with it :)
+
+Have a great day and I'll see you all tomorrow
+
 ## August 7, 2020
 
 Hey!

@@ -6,13 +6,20 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 10, 2020
+
+Today we tiled out our game in Unity. If you don't remember how to get to the Tile Palette, refer to Friday's post :)
+
+See you all tomorrow to talk about some collision detection :)
+
+
 ## August 7, 2020
 
 So today in class we fixed our crouching, then started tilemaping!
 
 We set it up in class, but in case you want to work on it over the weekend...
 
-<pre>Window > 2D > TilePalet</pre>
+<pre>Window > 2D > Tile Palette</pre>
 
 Have a great weekend guys, and I'll see you all on Monday :) 
 
