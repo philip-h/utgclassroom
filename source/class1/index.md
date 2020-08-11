@@ -6,6 +6,12 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 11, 2020
+
+More working on our game.
+At this point, these posts are more of a "What did we do again?" than a "how do I do this?".
+Anyway, see you all tomorrow :)
+
 ## August 10, 2020
 
 LAST WEEK OF CLASSES!

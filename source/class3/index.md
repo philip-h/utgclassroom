@@ -6,6 +6,14 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 11, 2020
+
+Today we did collision detection for our game using **RigidBody2D** and **CapsuleColliders** and **Tilemap Colliders**!
+
+Tomorrow we will implement jumping :)
+
+See you then.
+
 ## August 10, 2020
 
 Today we tiled out our game in Unity. If you don't remember how to get to the Tile Palette, refer to Friday's post :)
