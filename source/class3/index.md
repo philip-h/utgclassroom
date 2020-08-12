@@ -6,6 +6,127 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 12, 2020
+
+So today we implemented jumping in our game!
+
+The first thing we did was add some variables to the top of our screen to control the jumping
+
+{% code PlayerController.cs %}
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 2f;
+    public float jumpForce = 5f;
+    Animator animator;
+    Rigidbody2D rb;
+// ...
+}
+{% endcode %}
+
+Notice we added the jumpForce and the **RigidBody2D**.
+
+Next we set up the **RigidBody2D** in the **Start** function.
+{% code PlayerController.cs %}
+// ...
+// Start is called before the first frame update
+void Start()
+{
+    animator = GetComponent<Animator>();
+    rb = GetComponent<Rigidbody2D>();
+}
+// ...
+{% endcode %}
+
+Then we added code that makes our player jump if we press the space key
+
+{% code PlayerController.cs %}
+// Update is called once per frame
+void Update()
+{
+    // ...
+    // If I press down the space key
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+}
+{% endcode %}
+
+And that's it! Now your player should be able to jump.
+Here is the whole PlayerController.cs code for reference.
+
+{% code PlayerController.cs %}
+// Using statements ...
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 2f;
+    public float jumpForce = 5f;
+    Animator animator;
+    Rigidbody2D rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // If I press the left arrow key
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            // Move player to the left
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            // Make player face left
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            animator.SetBool("IsMoving", true);
+        // If I release the left arrow key
+        } else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+
+        // If I press the right arrow key
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            // Move player to the right
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            // Make the player face right
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            animator.SetBool("IsMoving", true);
+        // If I release the right arrow key
+        } else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+        // If I press the down arrow key
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("IsCrouching", true);
+        }
+        // If I release the down arrow key
+        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            animator.SetBool("IsCrouching", false);
+        }
+
+        // If I press down the space key
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+}
+
+{% endcode %}
+
+Have a great day and I'll see you guys tomorrow for more some more collision detection :) (And getting rid of the double jumping)
+
 ## August 11, 2020
 
 Today we did collision detection for our game using **RigidBody2D** and **CapsuleColliders** and **Tilemap Colliders**!

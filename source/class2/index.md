@@ -6,6 +6,10 @@ icon: fas fa-lemon
 date: 2019-09-13 16:23:44
 ---
 
+## August 12, 2020
+
+Work, work work :)
+
 ## August 11, 2020
 
 More working on our game.
