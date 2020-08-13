@@ -31,8 +31,8 @@ Next we set up the **RigidBody2D** in the **Start** function.
 // Start is called before the first frame update
 void Start()
 {
-    animator = GetComponent<Animator>();
-    rb = GetComponent<Rigidbody2D>();
+    animator = GetComponent&lt;Animator&gt;();
+    rb = GetComponent&lt;Rigidbody2D&gt;();
 }
 // ...
 {% endcode %}
@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent&lt;Animator&gt;();
+        rb = GetComponent&lt;Rigidbody2D&gt;();
     }
 
     // Update is called once per frame
