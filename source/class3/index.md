@@ -6,6 +6,87 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 13, 2020
+
+Today we took away our ability to infinite jump!
+
+First off, we need to make sure we add a **Tag** to our **Tilemap** of **Ground**. After that, the code is as follows (Whole update method for reference too)
+
+{% code PlayerController.cs %}
+// Update is called once per frame
+void Update()
+{
+    // If I press the left arrow key
+    if (Input.GetKey(KeyCode.LeftArrow))
+    {
+        // Move player to the left
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        // Make player face left
+        transform.localScale = new Vector3(-1f, 1f, 1f);
+        animator.SetBool("IsMoving", true);
+        // If I release the left arrow key
+    }
+    else if (Input.GetKeyUp(KeyCode.LeftArrow))
+    {
+        animator.SetBool("IsMoving", false);
+    }
+
+
+    // If I press the right arrow key
+    else if (Input.GetKey(KeyCode.RightArrow))
+    {
+        // Move player to the right
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        // Make the player face right
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        animator.SetBool("IsMoving", true);
+        // If I release the right arrow key
+    }
+    else if (Input.GetKeyUp(KeyCode.RightArrow))
+    {
+        animator.SetBool("IsMoving", false);
+    }
+
+    // If I press the down arrow key
+    else if (Input.GetKey(KeyCode.DownArrow))
+    {
+        animator.SetBool("IsCrouching", true);
+    }
+    // If I release the down arrow key
+    else if (Input.GetKeyUp(KeyCode.DownArrow))
+    {
+        animator.SetBool("IsCrouching", false);
+    }
+
+    // If I press down the space key
+    if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+    {
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+}
+
+private void OnCollisionStay2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Ground"))
+    {
+        isGrounded = true;
+    }
+}
+
+private void OnCollisionExit2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Ground"))
+    {
+        isGrounded = false;
+    }
+}
+{% endcode %}
+
+Notice the **&amp;&amp; isGrounded** in the if statement? That's important too!
+
+Okay guys, I'll see you tomorrow for our FINAL CLASS!
+
 ## August 12, 2020
 
 So today we implemented jumping in our game!
