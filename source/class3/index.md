@@ -6,6 +6,13 @@ icon: fab fa-steam
 date: 2019-09-13 16:23:44
 ---
 
+## August 14, 2020
+
+WE DID IT! 6 weeks of intense coding and we should all be proud.
+I was inspired by each and every one of you this year, and I could not be happier.
+
+Have a great rest of the summer, stay safe, and hopefullly our paths will cross again :)
+
 ## August 13, 2020
 
 Today we took away our ability to infinite jump!
